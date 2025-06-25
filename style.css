@@ -1,0 +1,305 @@
+/* ============================= */
+/* Reset básico e box-sizing */
+/* ============================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Facilita o controle de tamanhos */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: SST, helvetica, arial, sans-serif;
+}
+
+/* ============================= */
+/* Header fixo no topo */
+/* ============================= */
+header {
+  background-color: rgb(0, 0, 0);
+  font-family: 'Monoton', sans-serif;
+  border-bottom: 3px solid #444;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  height: 60px; /* Altura fixa */
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* ============================= */
+/* Espaço reservado para header + navbar */
+/* ============================= */
+body {
+  padding-top: 120px; /* 60px header + 60px navbar */
+}
+
+/* ============================= */
+/* Navbar fixada abaixo do header */
+/* ============================= */
+.navbar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  background-color: #fafafa;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça logo, menu e área direita */
+
+  padding: 0 1rem;
+  z-index: 999;
+}
+
+/* ============================= */
+/* Logo responsiva */
+/* ============================= */
+.navbar-logo {
+  max-width: 100%;
+  height: 40px; /* Altura fixa da logo */
+  margin-right: 1rem;
+}
+
+/* ============================= */
+/* Menu principal com flexbox */
+/* ============================= */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+  gap: 0.4rem;     /* Espaço entre os menus */
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;    /* Ocupa o máximo possível */
+  justify-content: flex-start; /* Alinha à esquerda */
+}
+
+/* ============================= */
+/* Cada item do menu */
+/* ============================= */
+.nav-menu li {
+  color: #757575;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 100px; /* Largura mínima para não encolher demais */
+  text-align: center;
+}
+
+/* ============================= */
+/* Barra de submenu (oculta inicialmente) */
+/* ============================= */
+.submenu-bar {
+  position: fixed;
+  top: 120px; /* abaixo do header + navbar */
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  z-index: 998;
+}
+
+/* Barra de submenu ativa */
+.submenu-bar.active {
+  max-height: 300px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================= */
+/* Sub-opções (itens) do submenu */
+/* ============================= */
+.submenu-item {
+  height: 120px;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.submenu-item:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6); /* sombra preta */
+}
+
+/* ============================= */
+/* Container para botão e busca (à direita da navbar) */
+/* ============================= */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ============================= */
+/* Botão azul circular com texto branco */
+/* ============================= */
+.btn-login {
+  background-color: #007BFF;
+  border: 2px solid #007BFF;
+  border-radius: 30px;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  white-space: nowrap; /* evita quebra de texto */
+}
+
+.btn-login:hover {
+  background-color: #084586;
+}
+
+/* ============================= */
+/* Input de busca estilizado */
+/* ============================= */
+.search-input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #555;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  max-width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #000000;
+}
+
+.search-input:focus {
+  border-color: #007BFF;
+  background-color: #ffffff;
+}
+
+/* ============================= */
+/* ============================= */
+/* ======== RESPONSIVIDADE ===== */
+/* ============================= */
+/* ============================= */
+
+/* Telas menores que 900px (tablets) */
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 2rem;
+    flex-wrap: wrap; /* quebra linha para caber */
+  }
+
+  .submenu-bar {
+    padding: 1rem 1rem;
+    max-height: 250px;
+  }
+
+  .submenu-item {
+    height: 100px;
+  }
+
+  .btn-login {
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .search-input {
+    max-width: 130px;
+  }
+}
+
+/* Telas menores que 600px (celulares grandes e tablets pequenos) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap; /* permite que o conteúdo quebre linha */
+    height: auto; /* altura adaptável */
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-menu li {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+
+  .submenu-bar {
+    top: 140px;
+    padding: 1rem;
+    max-height: 200px;
+  }
+
+  .submenu-item {
+    height: 80px;
+  }
+
+  .btn-login {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .search-input {
+    max-width: 120px;
+  }
+}
+
+/* Telas menores que 400px (celulares pequenos) */
+@media (max-width: 400px) {
+  .nav-menu {
+    gap: 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-menu li {
+    min-width: 60px;
+  }
+
+  .submenu-item {
+    height: 60px;
+  }
+
+  .btn-login {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .search-input {
+    max-width: 100px;
+    font-size: 0.75rem;
+  }
+}

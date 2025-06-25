@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replica Site Playstation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <h1></h1>
+        <img src="img/logoSony.webp" alt="LogoSony" style="height: 150px; margin-right: 1rem;"> <!-- Título principal do site -->
+</header>
+
+<nav class="navbar">
+    <nav class="navbar">
+  <img src="img/logoPlaystation.png" alt="Logo Navbar" class="navbar-logo">
+  <ul class="nav-menu">
+    <li data-submenu="menu1">Jogos▼</li>
+    <li data-submenu="menu2">PS5▼</li>
+    <li data-submenu="menu3">PS4▼</li>
+    <li data-submenu="menu3">Serviços▼</li>
+    <li data-submenu="menu3">Acessórios▼</li>
+    <li data-submenu="menu3">Notícias▼</li>
+    <li data-submenu="menu3">Loja▼</li>
+    <li data-submenu="menu3">Suporte▼</li>
+    <!-- até Menu 8 -->
+  </ul>
+
+   <!-- Área da direita: botão + pesquisa -->
+  <div class="navbar-right">
+    <button class="btn-login">Iniciar Sessão</button>
+    <input type="text" class="search-input" placeholder="Pesquisar">
+  </div>
+</nav>
+
+<div class="submenu-bar" id="submenu-bar">
+  <!-- Submenus serão carregados aqui dinamicamente -->
+</div>
+
+<script>
+  const submenuData = {
+    menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
+    menu2: ['Sub A', 'Sub B'],
+    menu3: ['Outro 1', 'Outro 2', 'Outro 3'],
+  };
+
+  const submenuBar = document.getElementById('submenu-bar');
+
+  document.querySelectorAll('.nav-menu li').forEach(item => {
+    item.addEventListener('click', () => {
+      const key = item.getAttribute('data-submenu');
+      const options = submenuData[key];
+
+      if (!options) {
+        submenuBar.classList.remove('active');
+        submenuBar.innerHTML = '';
+        return;
+      }
+
+      submenuBar.innerHTML = options.map(imgName => `<img src="${imgName}" class="submenu-item" alt="Submenu">`)
+  .join('');
+      submenuBar.classList.add('active');
+    });
+  });
+
+  // Fechar ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-menu') && !e.target.closest('#submenu-bar')) {
+      submenuBar.classList.remove('active');
+      submenuBar.innerHTML = '';
+    }
+  });
+</script>
+
+    
+</body>
+</html>
