@@ -1,79 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Replica Site Playstation</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Replica Site Playstation</title>
+  <!-- Link externo para o arquivo CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <h1></h1>
-        <img src="img/logoSony.webp" alt="LogoSony" style="height: 150px; margin-right: 1rem;"> <!-- Título principal do site -->
-</header>
+  <!-- HEADER FIXO NO TOPO -->
+  <header>
+    <!-- Logo Sony no header -->
+    <img src="img/logoSony.webp" alt="Logo Sony" style="height: 80px;" />
+  </header>
 
-<nav class="navbar">
-    <nav class="navbar">
-  <img src="img/logoPlaystation.png" alt="Logo Navbar" class="navbar-logo">
-  <ul class="nav-menu">
-    <li data-submenu="menu1">Jogos▼</li>
-    <li data-submenu="menu2">PS5▼</li>
-    <li data-submenu="menu3">PS4▼</li>
-    <li data-submenu="menu3">Serviços▼</li>
-    <li data-submenu="menu3">Acessórios▼</li>
-    <li data-submenu="menu3">Notícias▼</li>
-    <li data-submenu="menu3">Loja▼</li>
-    <li data-submenu="menu3">Suporte▼</li>
-    <!-- até Menu 8 -->
-  </ul>
+  <!-- NAVBAR PRINCIPAL FIXA ABAIXO DO HEADER -->
+  <nav class="navbar">
+    <!-- Logo Playstation na navbar -->
+    <img src="img/logoPlaystation.png" alt="Logo Playstation" class="navbar-logo" />
+    <!-- Menu principal -->
+    <ul class="nav-menu">
+      <li data-submenu="menu1">Jogos▼</li>
+      <li data-submenu="menu2">PS5▼</li>
+      <li data-submenu="menu3">PS4▼</li>
+      <li data-submenu="menu3">Serviços▼</li>
+      <li data-submenu="menu3">Acessórios▼</li>
+      <li data-submenu="menu3">Notícias▼</li>
+      <li data-submenu="menu3">Loja▼</li>
+      <li data-submenu="menu3">Suporte▼</li>
+    </ul>
+    <!-- Área direita da navbar com botão e campo de busca -->
+    <div class="navbar-right">
+      <button class="btn-login">Iniciar Sessão</button>
+      <input type="text" class="search-input" placeholder="Pesquisar" />
+    </div>
+  </nav>
 
-   <!-- Área da direita: botão + pesquisa -->
-  <div class="navbar-right">
-    <button class="btn-login">Iniciar Sessão</button>
-    <input type="text" class="search-input" placeholder="Pesquisar">
-  </div>
-</nav>
+  <!-- SUBMENU DINÂMICO QUE APARECE ABAIXO DA NAVBAR PRINCIPAL -->
+  <div class="submenu-bar" id="submenu-bar"></div>
 
-<div class="submenu-bar" id="submenu-bar">
-  <!-- Submenus serão carregados aqui dinamicamente -->
+  <!-- SEGUNDA NAVBAR FIXA ABAIXO DA PRINCIPAL -->
+  <nav class="second-navbar">
+    <img src="img/LogoPlaystationPlus.webp" alt="Logo lateral" class="second-navbar-logo" />
+    <ul class="second-navbar-menu">
+      <li>Visão Geral</li>
+      <li>Novidades do Playstation Plus</li>
+      <li>Todos os jogos de A a Z</li>
+    </ul>
+    <button class="btn-plus">Assinar o Playstation Plus</button>
+  </nav>
+
+  <!-- IMAGEM BANNER GRANDE, COLADA NA SEGUNDA NAVBAR -->
+  <div class="banner01">
+    <img src="img/banner01.png" alt="Banner Playstation" />
+    <div class="SubtituloBanner">
+    <h2>Novos mundos aguardam<br>
+       você com o PlayStation<br> 
+       Plus</h2>
+    <p>Descubra um universo de novas experiências com três planos de assinatura<br>
+       do PlayStation Plus, incluindo o acesso a centenas de jogos entre o catálogo<br>
+        de jogos, o catálogo de clássicos e a experimentação de jogos.</p>
+
+         <button class="AssineAgora">Assinr Agora</button>
+  
+  
+      </div>
+
+
+
 </div>
 
-<script>
-  const submenuData = {
-    menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
-    menu2: ['Sub A', 'Sub B'],
-    menu3: ['Outro 1', 'Outro 2', 'Outro 3'],
-  };
 
-  const submenuBar = document.getElementById('submenu-bar');
+  <!-- SCRIPT PARA FUNCIONAMENTO DO SUBMENU -->
+  <script>
+    // Dados dos submenus, onde a chave é o valor do atributo data-submenu
+    const submenuData = {
+      menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
+      menu2: ['Sub A', 'Sub B'],
+      menu3: ['Outro 1', 'Outro 2', 'Outro 3'],
+    };
 
-  document.querySelectorAll('.nav-menu li').forEach(item => {
-    item.addEventListener('click', () => {
-      const key = item.getAttribute('data-submenu');
-      const options = submenuData[key];
+    const submenuBar = document.getElementById('submenu-bar');
 
-      if (!options) {
+    // Para cada item do menu principal adiciona um listener para mostrar submenu
+    document.querySelectorAll('.nav-menu li').forEach(item => {
+      item.addEventListener('click', () => {
+        const key = item.getAttribute('data-submenu'); // pega a chave
+        const options = submenuData[key];               // pega os dados
+
+        // Se não houver submenu para essa chave, fecha o submenu
+        if (!options) {
+          submenuBar.classList.remove('active');
+          submenuBar.innerHTML = '';
+          return;
+        }
+
+        // Gera o conteúdo do submenu (aqui só imagens, mas pode ser texto)
+        submenuBar.innerHTML = options
+          .map(imgName => `<img src="${imgName}" class="submenu-item" alt="Submenu">`)
+          .join('');
+        submenuBar.classList.add('active');
+      });
+    });
+
+    // Fecha submenu se clicar fora do menu principal e submenu
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-menu') && !e.target.closest('#submenu-bar')) {
         submenuBar.classList.remove('active');
         submenuBar.innerHTML = '';
-        return;
       }
-
-      submenuBar.innerHTML = options.map(imgName => `<img src="${imgName}" class="submenu-item" alt="Submenu">`)
-  .join('');
-      submenuBar.classList.add('active');
     });
-  });
+  </script>
 
-  // Fechar ao clicar fora
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-menu') && !e.target.closest('#submenu-bar')) {
-      submenuBar.classList.remove('active');
-      submenuBar.innerHTML = '';
-    }
-  });
-</script>
-
-    
 </body>
 </html>

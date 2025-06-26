@@ -1,305 +1,307 @@
-/* ============================= */
-/* Reset básico e box-sizing */
-/* ============================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* Facilita o controle de tamanhos */
-}
-
-body, html {
+/* ================================== */
+/* RESET BÁSICO PARA TODOS OS ELEMENTOS */
+/* ================================== */
+* {
   margin: 0;
   padding: 0;
-  font-family: SST, helvetica, arial, sans-serif;
+  box-sizing: border-box; /* Facilita controle de espaçamentos */
 }
 
-/* ============================= */
-/* Header fixo no topo */
-/* ============================= */
+/* ================================== */
+/* ESTILIZAÇÕES GERAIS DE PÁGINA */
+/* ================================== */
+html, body {
+  font-family: 'Arial', sans-serif;
+  height: auto;
+  overflow-x: hidden; /* Evita rolagem horizontal */
+  overflow-y: auto;   /* Permite rolagem vertical */
+  padding-top: 90px; /* <--- MANTENHA ESTE VALOR,e tbm regula a distancia do banner01 do secon navbar */
+}
+
+/* ================================== */
+/* HEADER FIXO NO TOPO DA PÁGINA */
+/* ================================== */
 header {
-  background-color: rgb(0, 0, 0);
-  font-family: 'Monoton', sans-serif;
+  background-color: black;
   border-bottom: 3px solid #444;
-
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
+  height: 50px; /* altura fixa */
   z-index: 1000;
-
-  height: 60px; /* Altura fixa */
-  overflow: hidden;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end; /* imagem à direita */
   padding: 0 1rem;
+  overflow: hidden; /* corta qualquer parte que ultrapasse */
 }
 
-/* ============================= */
-/* Espaço reservado para header + navbar */
-/* ============================= */
-body {
-  padding-top: 120px; /* 60px header + 60px navbar */
-}
 
-/* ============================= */
-/* Navbar fixada abaixo do header */
-/* ============================= */
+
+/* ================================== */
+/* NAVBAR PRINCIPAL FIXA ABAIXO DO HEADER */
+/* ================================== */
 .navbar {
   position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-
+  top: 60px; /* Logo abaixo do header */
+  left: 0; right: 0;
   height: 60px;
-  background-color: #fafafa;
-
+  background-color: white;
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espaça logo, menu e área direita */
-
+  justify-content: space-between;
   padding: 0 1rem;
-  z-index: 999;
 }
 
-/* ============================= */
-/* Logo responsiva */
-/* ============================= */
 .navbar-logo {
-  max-width: 100%;
-  height: 40px; /* Altura fixa da logo */
-  margin-right: 1rem;
+  height: 40px; /* Tamanho fixo da logo */
 }
 
-/* ============================= */
-/* Menu principal com flexbox */
-/* ============================= */
+/* Estilo do menu principal */
 .nav-menu {
-  list-style: none;
+  list-style: none; /* Remove marcadores padrão */
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-  gap: 0.4rem;     /* Espaço entre os menus */
-  padding: 0;
-  margin: 0;
+  gap: 0.7rem;     /* Espaço entre os itens */
   flex-grow: 1;    /* Ocupa o máximo possível */
-  justify-content: flex-start; /* Alinha à esquerda */
+  margin: 0;
+  padding: 0;
 }
 
-/* ============================= */
-/* Cada item do menu */
-/* ============================= */
+/* Itens do menu */
 .nav-menu li {
+  font-size: 0.75rem;
+  font-weight: bold;
   color: #757575;
-  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Cor quando passar mouse */
+.nav-menu li:hover {
+  color: #007BFF;
+}
+
+/* Área direita da navbar: botão e campo de busca */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Botão azul para login */
+.btn-login {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  min-width: 100px; /* Largura mínima para não encolher demais */
-  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-/* ============================= */
-/* Barra de submenu (oculta inicialmente) */
-/* ============================= */
+.btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* Campo de busca */
+.search-input {
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  max-width: 150px;
+  outline: none;
+}
+
+/* ================================== */
+/* BARRA DE SUBMENU OCULTA INICIALMENTE */
+/* ================================== */
 .submenu-bar {
   position: fixed;
-  top: 120px; /* abaixo do header + navbar */
-  left: 0;
-  right: 0;
-  background-color: #ffffff;
+  top: 120px; /* Abaixo da navbar principal */
+  left: 0; right: 0;
+  background-color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
-  padding: 1.5rem 2rem;
-
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-
-  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-
+  padding: 1rem;
+  max-height: 0;        /* Altura zero quando oculto */
+  opacity: 0;           /* Invisível quando oculto */
+  overflow: hidden;     /* Esconde conteúdo quando oculto */
+  pointer-events: none; /* Não recebe clique quando oculto */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
   z-index: 998;
 }
 
-/* Barra de submenu ativa */
+/* Quando ativo (classe adicionada pelo JS) */
 .submenu-bar.active {
   max-height: 300px;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* ============================= */
-/* Sub-opções (itens) do submenu */
-/* ============================= */
+/* Itens do submenu (imagens) */
 .submenu-item {
-  height: 120px;
-  width: auto;
-  cursor: pointer;
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-  border: 2px solid transparent;
+  height: 100px;
   border-radius: 8px;
+  transition: box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
 .submenu-item:hover {
-  border-color: #ffffff;
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6); /* sombra preta */
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* ============================= */
-/* Container para botão e busca (à direita da navbar) */
-/* ============================= */
-.navbar-right {
+/* ================================== */
+/* SEGUNDA NAVBAR FIXA ABAIXO DA PRINCIPAL */
+/* ================================== */
+.second-navbar {
+  position: fixed;
+  top: 120px; /* Logo abaixo da navbar principal */
+  left: 0; right: 0;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 950;
 }
 
-/* ============================= */
-/* Botão azul circular com texto branco */
-/* ============================= */
-.btn-login {
-  background-color: #007BFF;
-  border: 2px solid #007BFF;
-  border-radius: 30px;
+.second-navbar-logo {
+  height: 30px;
+}
+
+/* Menu da segunda navbar */
+.second-navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.second-navbar-menu li {
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.second-navbar-menu li:hover {
+  color: #007BFF;
+}
+
+/* Botão vermelho grande para "Assinar o Playstation Plus" */
+.btn-plus {
+  background-color: #D80027;
   color: white;
-  padding: 0.4rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 0.9rem;
-  white-space: nowrap; /* evita quebra de texto */
 }
 
-.btn-login:hover {
-  background-color: #084586;
+.btn-plus:hover {
+  background-color: #a1001d;
 }
 
-/* ============================= */
-/* Input de busca estilizado */
-/* ============================= */
-.search-input {
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  border: 1px solid #555;
-  outline: none;
-  font-size: 0.9rem;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+/* ================================== */
+/* IMAGEM BANNER GRANDE */
+/* ================================== */
+.banner01 img {
+  display: block;       /* Remove espaço em linha abaixo da imagem */
+  width: 100vw;         /* Ocupa toda largura da viewport */
+  height: auto;         /* Mantém proporção */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.SubtituloBanner {
+  position: relative;
+  width: 100vw;
+  height: auto;
+ 
+  
+}
+
+.SubtituloBanner img {
   width: 100%;
-  max-width: 150px;
-  transition: border-color 0.3s ease;
+  display: block;
+  height: auto;
 }
 
-.search-input::placeholder {
-  color: #000000;
+.SubtituloBanner {
+  position: absolute;
+  top: 52%;
+  left: 6%;
+  color: rgb(0, 0, 0);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-style: normal;
+
 }
 
-.search-input:focus {
-  border-color: #007BFF;
-  background-color: #ffffff;
+.SubtituloBanner h2 {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -.1px;
+  line-height: 1.;
 }
 
-/* ============================= */
-/* ============================= */
-/* ======== RESPONSIVIDADE ===== */
-/* ============================= */
-/* ============================= */
+.SubtituloBanner p {
+  position: absolute;
+  top: 100%;
+  left: -1%;
+  color: rgb(107, 107, 107, 01);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-style: normal;
+  letter-spacing: 0.1px;
+   line-height: 23px;
+  
 
-/* Telas menores que 900px (tablets) */
-@media (max-width: 900px) {
-  .nav-menu {
-    gap: 2rem;
-    flex-wrap: wrap; /* quebra linha para caber */
-  }
-
-  .submenu-bar {
-    padding: 1rem 1rem;
-    max-height: 250px;
-  }
-
-  .submenu-item {
-    height: 100px;
-  }
-
-  .btn-login {
-    padding: 0.3rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .search-input {
-    max-width: 130px;
-  }
 }
 
-/* Telas menores que 600px (celulares grandes e tablets pequenos) */
-@media (max-width: 600px) {
-  .navbar {
-    flex-wrap: wrap; /* permite que o conteúdo quebre linha */
-    height: auto; /* altura adaptável */
-    padding: 0.5rem 1rem;
-  }
+/* Botão vermelho pequeno no banner para "Assine Agora" */
+.AssineAgora {
+  background-color: rgb(213, 59, 0, 1);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-  .navbar-logo {
-    margin-bottom: 0.5rem;
-  }
+    position: absolute; /* Agora o botão pode ser movido livremente */
+    /* Exemplos de posicionamento (ajuste esses valores conforme necessário): */
+    top: 165%;   /* 70% da altura do SubtituloBanner */
+    left: 2%;  /* 5% da largura do SubtituloBanner */
+    /* Ou, se quiser posicionar a partir do final: */
+    /* bottom: 20px; */
+    /* right: 30px; */
+    /* Ou centralizar horizontalmente: */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */ /* Para centralizar o próprio botão */
 
-  .nav-menu {
-    width: 100%;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-menu li {
-    min-width: 80px;
-    font-size: 0.8rem;
-  }
-
-  .submenu-bar {
-    top: 140px;
-    padding: 1rem;
-    max-height: 200px;
-  }
-
-  .submenu-item {
-    height: 80px;
-  }
-
-  .btn-login {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .search-input {
-    max-width: 120px;
-  }
 }
 
-/* Telas menores que 400px (celulares pequenos) */
-@media (max-width: 400px) {
-  .nav-menu {
-    gap: 0.7rem;
-    font-size: 0.75rem;
-  }
-
-  .nav-menu li {
-    min-width: 60px;
-  }
-
-  .submenu-item {
-    height: 60px;
-  }
-
-  .btn-login {
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
-  }
-
-  .search-input {
-    max-width: 100px;
-    font-size: 0.75rem;
-  }
+.AssineAgora:hover {
+  background-color: #a1001d;
 }
+
+
+
+
+
+  
+
