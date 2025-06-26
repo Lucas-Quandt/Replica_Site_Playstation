@@ -1,117 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Replica Site Playstation</title>
-  <!-- Link externo para o arquivo CSS -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replica Site Playstation</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER FIXO NO TOPO -->
-  <header>
-    <!-- Logo Sony no header -->
-    <img src="img/logoSony.webp" alt="Logo Sony" style="height: 80px;" />
-  </header>
+    <header>
+        <img src="img/logoSony.webp" alt="Logo Sony" />
+    </header>
 
-  <!-- NAVBAR PRINCIPAL FIXA ABAIXO DO HEADER -->
-  <nav class="navbar">
-    <!-- Logo Playstation na navbar -->
-    <img src="img/logoPlaystation.png" alt="Logo Playstation" class="navbar-logo" />
-    <!-- Menu principal -->
-    <ul class="nav-menu">
-      <li data-submenu="menu1">Jogos▼</li>
-      <li data-submenu="menu2">PS5▼</li>
-      <li data-submenu="menu3">PS4▼</li>
-      <li data-submenu="menu3">Serviços▼</li>
-      <li data-submenu="menu3">Acessórios▼</li>
-      <li data-submenu="menu3">Notícias▼</li>
-      <li data-submenu="menu3">Loja▼</li>
-      <li data-submenu="menu3">Suporte▼</li>
-    </ul>
-    <!-- Área direita da navbar com botão e campo de busca -->
-    <div class="navbar-right">
-      <button class="btn-login">Iniciar Sessão</button>
-      <input type="text" class="search-input" placeholder="Pesquisar" />
+    <nav class="navbar">
+        <img src="img/logoPlaystation.png" alt="Logo Playstation" class="navbar-logo" />
+
+        <ul class="nav-menu">
+            <li data-submenu="menu1">Jogos<span class="arrow">▼</span></li>
+            <li data-submenu="menu2">PS5<span class="arrow">▼</span></li>
+            <li data-submenu="menu3">PS4<span class="arrow">▼</span></li>
+            <li data-submenu="menu4">Serviços<span class="arrow">▼</span></li>
+            <li data-submenu="menu5">Acessórios<span class="arrow">▼</span></li>
+            <li data-submenu="menu6">Notícias<span class="arrow">▼</span></li>
+            <li data-submenu="menu7">Loja<span class="arrow">▼</span></li>
+            <li data-submenu="menu8">Suporte<span class="arrow">▼</span></li>
+        </ul>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="navbar-right">
+            <button class="btn-login">Iniciar Sessão</button>
+            <input type="text" class="search-input" placeholder="Pesquisar" />
+        </div>
+    </nav>
+
+    <div class="submenu-bar" id="submenu-bar"></div>
+
+    <nav class="second-navbar">
+        <img src="img/LogoPlaystationPlus.webp" alt="Logo Playstation Plus" class="second-navbar-logo" />
+        <ul class="second-navbar-menu">
+            <li>Visão Geral</li>
+            <li>Novidades do Playstation Plus</li>
+            <li>Todos os jogos de A a Z</li>
+        </ul>
+        <button class="btn-plus">Assinar o Playstation Plus</button>
+    </nav>
+
+    <div class="banner-section"> <img src="img/banner01.png" alt="Banner Playstation" class="banner-image" /> <div class="banner-content">
+            <h2>Novos mundos aguardam<br>você com o PlayStation<br>Plus</h2>
+            <p>Descubra um universo de novas experiências com três planos de assinatura<br>do PlayStation Plus, incluindo o acesso a centenas de jogos entre o catálogo<br>de jogos, o catálogo de clássicos e a experimentação de jogos.</p>
+            <button class="btn-action">Assinar Agora</button> </div>
     </div>
-  </nav>
 
-  <!-- SUBMENU DINÂMICO QUE APARECE ABAIXO DA NAVBAR PRINCIPAL -->
-  <div class="submenu-bar" id="submenu-bar"></div>
+    <div class = "Subtitulo2">
+        <h4>PLAYSTATION PLUS EM RESUMO</h4>
+    </div>
 
-  <!-- SEGUNDA NAVBAR FIXA ABAIXO DA PRINCIPAL -->
-  <nav class="second-navbar">
-    <img src="img/LogoPlaystationPlus.webp" alt="Logo lateral" class="second-navbar-logo" />
-    <ul class="second-navbar-menu">
-      <li>Visão Geral</li>
-      <li>Novidades do Playstation Plus</li>
-      <li>Todos os jogos de A a Z</li>
-    </ul>
-    <button class="btn-plus">Assinar o Playstation Plus</button>
-  </nav>
+    <div class = "Subtitulo3">
+        <h1>ÓTIMOS BENEFÍCIOS<br>
+          PARA TODOS OS TIPOS DE<br>
+           JOGADORES</h1>
+    </div>
 
-  <!-- IMAGEM BANNER GRANDE, COLADA NA SEGUNDA NAVBAR -->
-  <div class="banner01">
-    <img src="img/banner01.png" alt="Banner Playstation" />
-    <div class="SubtituloBanner">
-    <h2>Novos mundos aguardam<br>
-       você com o PlayStation<br> 
-       Plus</h2>
-    <p>Descubra um universo de novas experiências com três planos de assinatura<br>
-       do PlayStation Plus, incluindo o acesso a centenas de jogos entre o catálogo<br>
-        de jogos, o catálogo de clássicos e a experimentação de jogos.</p>
+    <div class="galeria-fotos">
+        <img src="img/FotoKratos.png" alt="Descrição da Foto 1" class="foto-item">
+        <img src="img/FotoHelldavers.png" alt="Descrição da Foto 2" class="foto-item">
+        <img src="img/FotoDesconto.png" alt="Descrição da Foto 3" class="foto-item">
+    </div>
 
-         <button class="AssineAgora">Assinr Agora</button>
+    <button class="btn-3">Veja todos os benefícios do PlayStation Plus</button>
+
+    <div class = "banner2">
+      <img src="img/Banner02.png" alt="imagembanner2">
+    </div>
+
+     <div class="toggle-switch-wrapper">
+        <input type="checkbox" id="myToggle" class="toggle-input">
+        <label for="myToggle" class="toggle-label-visual">
+            <span class="toggle-text left">Últimas tendências</span>
+            <span class="toggle-text right">Novidades</span>
+        </label>
+    </div>
+
+        <div class="gallery-container-lateral">
+        <div class="horizontal-scroll-gallery">
+            <img src="img/imgFirebreak.png" alt="Paisagem 1">
+            <img src="img/imgGhostofTsushima.png" alt="Cidade 2">
+            <img src="img/imgBluePrince.png" alt="Natureza 3">
+            <img src="img/imgSpiderman.png" alt="Animais 4">
+            <img src="img/imgGodofWar.png" alt="Pessoas 5">
+        </div>
+    </div>
+
+
+
+    <script>
+        // Dados dos submenus. Cada chave (ex: 'menu1') corresponde ao 'data-submenu' de um item do menu principal.
+        // O valor é um array com os caminhos das imagens (ou outros conteúdos) para aquele submenu.
+        const submenuData = {
+            menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
+            menu2: ['img/imgSubmenuPS5_1.png', 'img/imgSubmenuPS5_2.png', 'img/imgSubmenuPS5_3.png'], // Adicionei exemplos de imagens para PS5
+            menu3: ['img/imgSubmenuPS4_1.png', 'img/imgSubmenuPS4_2.png', 'img/imgSubmenuPS4_3.png'], // Adicionei exemplos de imagens para PS4
+            menu4: ['img/imgSubmenuServicos_1.png', 'img/imgSubmenuServicos_2.png'], // Exemplo para Serviços
+            menu5: ['img/imgSubmenuAcessorios_1.png', 'img/imgSubmenuAcessorios_2.png'], // Exemplo para Acessórios
+            menu6: ['img/imgSubmenuNoticias_1.png', 'img/imgSubmenuNoticias_2.png'], // Exemplo para Notícias
+            menu7: ['img/imgSubmenuLoja_1.png'], // Exemplo para Loja
+            menu8: ['img/imgSubmenuSuporte_1.png'] // Exemplo para Suporte
+        };
+
+        // Seleciona o elemento do submenu pelo seu ID.
+        const submenuBar = document.getElementById('submenu-bar');
+        // Seleciona o ícone do menu hambúrguer para telas pequenas.
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        // Seleciona o menu principal.
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Adiciona um 'event listener' (ouvinte de evento) para cada item do menu principal.
+        // Quando um item é clicado, a função dentro é executada.
+        document.querySelectorAll('.nav-menu li').forEach(item => {
+            item.addEventListener('click', (event) => {
+                // Previne o comportamento padrão do clique (útil se o <li> fosse um <a>).
+                event.stopPropagation(); // Impede que o clique "suba" para o document
+
+                const key = item.getAttribute('data-submenu'); // Pega o valor do atributo 'data-submenu' do item clicado.
+                const options = submenuData[key]; // Usa a chave para obter os dados correspondentes do 'submenuData'.
+
+                // Verifica se o submenu já está ativo e se o mesmo item foi clicado novamente.
+                // Se sim, fecha o submenu. Isso permite "alternar" (abrir/fechar) clicando no mesmo item.
+                const isActive = submenuBar.classList.contains('active');
+                const isSameMenu = submenuBar.dataset.activeMenu === key; // Verifica se é o mesmo menu que já está aberto
+
+                if (isActive && isSameMenu) {
+                    submenuBar.classList.remove('active'); // Remove a classe 'active' para esconder o submenu.
+                    submenuBar.innerHTML = ''; // Limpa o conteúdo do submenu.
+                    submenuBar.removeAttribute('data-active-menu'); // Remove o atributo
+                    return; // Sai da função.
+                }
+
+                // Se não houver dados para o submenu (ex: 'data-submenu' inválido), fecha e limpa.
+                if (!options) {
+                    submenuBar.classList.remove('active');
+                    submenuBar.innerHTML = '';
+                    submenuBar.removeAttribute('data-active-menu');
+                    return;
+                }
+
+                // Gera o conteúdo HTML para o submenu.
+                // map(): Transforma cada item do array 'options' em uma string HTML de imagem.
+                // join(''): Junta todas as strings HTML geradas em uma única string, sem separadores.
+                submenuBar.innerHTML = options
+                    .map(src => `<img src="${src}" class="submenu-item" alt="Submenu item">`)
+                    .join('');
+
+                submenuBar.classList.add('active'); // Adiciona a classe 'active' para exibir o submenu.
+                submenuBar.dataset.activeMenu = key; // Salva qual menu está ativo
+            });
+        });
+
+        // Adiciona um 'event listener' ao clique em qualquer lugar do documento.
+        // Isso é para fechar o submenu se o usuário clicar fora dele ou do menu principal.
+        document.addEventListener('click', (e) => {
+            // closest(): Procura o ancestral mais próximo que corresponda ao seletor.
+            // Se o clique NÃO foi dentro de '.nav-menu' E NÃO foi dentro de '#submenu-bar', então fecha o submenu.
+            if (!e.target.closest('.nav-menu') && !e.target.closest('#submenu-bar') && !e.target.closest('.hamburger-menu')) {
+                submenuBar.classList.remove('active');
+                submenuBar.innerHTML = '';
+                submenuBar.removeAttribute('data-active-menu');
+            }
+        });
+
+        // Adiciona um event listener para o clique no ícone do hambúrguer.
+        hamburgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active'); // Alterna a classe 'active' no menu principal.
+            hamburgerMenu.classList.toggle('active'); // Alterna a classe 'active' no hambúrguer para animação.
+        });
+
+        // Ouve o evento de redimensionamento da janela.
+        // Quando a janela for redimensionada para uma largura maior que 768px,
+        // garantimos que o menu hambúrguer e o menu principal voltem ao estado padrão (não "ativo" mobile).
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active'); // Remove a classe 'active' do menu principal.
+                hamburgerMenu.classList.remove('active'); // Remove a classe 'active' do hambúrguer.
+            }
+        });
+
+        
+
+    </script>
+
   
-  
-      </div>
-
-
-
-</div>
-
-
-  <!-- SCRIPT PARA FUNCIONAMENTO DO SUBMENU -->
-  <script>
-    // Dados dos submenus, onde a chave é o valor do atributo data-submenu
-    const submenuData = {
-      menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
-      menu2: ['Sub A', 'Sub B'],
-      menu3: ['Outro 1', 'Outro 2', 'Outro 3'],
-    };
-
-    const submenuBar = document.getElementById('submenu-bar');
-
-    // Para cada item do menu principal adiciona um listener para mostrar submenu
-    document.querySelectorAll('.nav-menu li').forEach(item => {
-      item.addEventListener('click', () => {
-        const key = item.getAttribute('data-submenu'); // pega a chave
-        const options = submenuData[key];               // pega os dados
-
-        // Se não houver submenu para essa chave, fecha o submenu
-        if (!options) {
-          submenuBar.classList.remove('active');
-          submenuBar.innerHTML = '';
-          return;
-        }
-
-        // Gera o conteúdo do submenu (aqui só imagens, mas pode ser texto)
-        submenuBar.innerHTML = options
-          .map(imgName => `<img src="${imgName}" class="submenu-item" alt="Submenu">`)
-          .join('');
-        submenuBar.classList.add('active');
-      });
-    });
-
-    // Fecha submenu se clicar fora do menu principal e submenu
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-menu') && !e.target.closest('#submenu-bar')) {
-        submenuBar.classList.remove('active');
-        submenuBar.innerHTML = '';
-      }
-    });
-  </script>
+    
+    
+    
 
 </body>
 </html>

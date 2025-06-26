@@ -2,306 +2,1023 @@
 /* RESET BÁSICO PARA TODOS OS ELEMENTOS */
 /* ================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Facilita controle de espaçamentos */
+    margin: 0; /* Remove margem externa padrão de todos os elementos */
+    padding: 0; /* Remove preenchimento interno padrão de todos os elementos */
+    /*
+     * box-sizing: border-box;
+     * Isso é crucial para o layout! Faz com que o padding e a borda de um elemento
+     * sejam incluídos em sua largura e altura totais. Sem isso, adicionar padding
+     * ou borda aumentaria o tamanho final do elemento, o que pode quebrar layouts.
+     */
+    box-sizing: border-box;
 }
 
 /* ================================== */
 /* ESTILIZAÇÕES GERAIS DE PÁGINA */
 /* ================================== */
-html, body {
-  font-family: 'Arial', sans-serif;
-  height: auto;
-  overflow-x: hidden; /* Evita rolagem horizontal */
-  overflow-y: auto;   /* Permite rolagem vertical */
-  padding-top: 90px; /* <--- MANTENHA ESTE VALOR,e tbm regula a distancia do banner01 do secon navbar */
+html {
+    /* Define o tamanho da fonte base. Usamos 'rem' para unidades relativas a esta base. */
+    font-size: 16px; /* Base para 'rem' */
+}
+
+body {
+    /*
+     * font-family: 'Arial', sans-serif;
+     * Define a fonte principal para todo o texto na página.
+     * 'Arial' é a primeira escolha; se não estiver disponível, usa uma fonte genérica 'sans-serif'
+     * (sem serifa, como Helvetica, Open Sans, etc.), que é uma boa prática para compatibilidade.
+     */
+    font-family: 'Arial', sans-serif;
+    height: auto; /* A altura do corpo se ajusta ao conteúdo */
+    /*
+     * overflow-x: hidden;
+     * Evita que o conteúdo ultrapasse a largura da tela, criando uma barra de rolagem horizontal.
+     * Isso é importante para layouts responsivos, para que o conteúdo se adapte e não "escape".
+     */
+    overflow-x: hidden;
+    /*
+     * overflow-y: auto;
+     * Permite a rolagem vertical (para cima/baixo) apenas se o conteúdo for maior que a altura da tela.
+     */
+    overflow-y: auto;
+    /*
+     * padding-top: calc(50px + 60px + 60px);
+     * Adiciona um espaçamento no topo da página igual à soma das alturas do header, navbar principal e segunda navbar.
+     * Isso garante que o conteúdo principal (como o banner) não fique escondido abaixo das barras fixas.
+     * Header (50px) + Navbar (60px) + Second Navbar (60px) = 170px.
+     * Removido o comentário antigo, o cálculo é mais preciso agora.
+     */
+    padding-top: calc(50px + 60px + 60px); /* 170px */
 }
 
 /* ================================== */
 /* HEADER FIXO NO TOPO DA PÁGINA */
 /* ================================== */
 header {
-  background-color: black;
-  border-bottom: 3px solid #444;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 50px; /* altura fixa */
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* imagem à direita */
-  padding: 0 1rem;
-  overflow: hidden; /* corta qualquer parte que ultrapasse */
+    background-color: black; /* Cor de fundo preta */
+    border-bottom: 3px solid #444; /* Borda inferior cinza escura de 3px */
+    /*
+     * position: fixed;
+     * Faz com que o header permaneça visível no mesmo lugar na tela, mesmo quando o usuário rola a página.
+     * Ele é "fixo" em relação à viewport (a janela do navegador).
+     */
+    position: fixed;
+    top: 0; /* Alinha o header ao topo da tela */
+    left: 0; /* Alinha o header à esquerda da tela */
+    right: 0; /* Alinha o header à direita da tela (junto com left:0, faz ele ocupar 100% da largura) */
+    height: 50px; /* Altura fixa do header */
+    /*
+     * z-index: 1000;
+     * Controla a ordem de empilhamento dos elementos. Um z-index maior significa que o elemento
+     * ficará "por cima" de outros com z-index menor. 1000 é um valor alto para garantir que o header
+     * sempre esteja na frente de outros conteúdos.
+     */
+    z-index: 1000;
+    display: flex; /* Usa Flexbox para organizar os itens internos (logo) */
+    align-items: center; /* Centraliza os itens verticalmente dentro do header */
+    justify-content: flex-end; /* Alinha a imagem à direita */
+    padding: 0 1rem; /* Padding interno: 0 no topo/base, 1rem (16px padrão) nas laterais */
+    overflow: hidden; /* Garante que nada dentro do header transborde (corte o que exceder) */
 }
 
-
+header img {
+    height: 88px; /* Tamanho da logo Sony, ajustado aqui para ser responsivo */
+    max-width: 100%; /* Garante que a imagem não ultrapasse sua largura */
+    object-fit: contain; /* Redimensiona a imagem para caber dentro da área, mantendo sua proporção */
+}
 
 /* ================================== */
 /* NAVBAR PRINCIPAL FIXA ABAIXO DO HEADER */
 /* ================================== */
 .navbar {
-  position: fixed;
-  top: 60px; /* Logo abaixo do header */
-  left: 0; right: 0;
-  height: 60px;
-  background-color: white;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+    position: fixed; /* Também fixa a navbar na tela */
+    top: 50px; /* Posiciona 50px abaixo do topo, exatamente abaixo do header de 50px */
+    left: 0; right: 0; /* Ocupa 100% da largura */
+    height: 60px; /* Altura da navbar (pode mudar em telas pequenas) */
+    background-color: white; /* Fundo branco */
+    z-index: 999; /* Um pouco abaixo do header, mas ainda alto para estar acima do conteúdo */
+    display: flex; /* Usa Flexbox para organizar logo, menu e botões */
+    align-items: center; /* Centraliza verticalmente os itens */
+    justify-content: space-between; /* Distribui o espaço entre os itens (logo na esq, botões na dir) */
+    padding: 0 1rem; /* Padding interno */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra suave para destacá-la */
 }
 
 .navbar-logo {
-  height: 40px; /* Tamanho fixo da logo */
+    height: 40px; /* Tamanho fixo da logo */
+    max-width: 100%; /* Garante que a logo não "quebre" em telas muito pequenas */
+    object-fit: contain; /* Mantém a proporção */
+    flex-shrink: 0; /* Impede que a logo encolha se houver pouco espaço */
 }
 
-/* Estilo do menu principal */
+/* Estilo do menu principal (lista de links) */
 .nav-menu {
-  list-style: none; /* Remove marcadores padrão */
-  display: flex;
-  gap: 0.7rem;     /* Espaço entre os itens */
-  flex-grow: 1;    /* Ocupa o máximo possível */
-  margin: 0;
-  padding: 0;
+    list-style: none; /* Remove os marcadores de lista padrão (bolinhas, etc.) */
+    display: flex; /* Usa Flexbox para que os itens do menu fiquem lado a lado */
+    gap: 3rem; /* Espaçamento entre cada item do menu */
+    flex-grow: 1; /* Permite que o menu ocupe o máximo de espaço disponível entre a logo e a área de busca/botão */
+    margin: 0; /* Remove margem padrão da lista */
+    padding: 0; /* Remove padding padrão da lista */
+    /*
+     * flex-wrap: wrap;
+     * Permite que os itens do menu "quebrem" para a próxima linha se não houver espaço suficiente.
+     * Essencial para responsividade, evitando que o menu fique apertado ou saia da tela.
+     */
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza o menu horizontalmente, se houver espaço */
 }
 
-/* Itens do menu */
+/* Itens individuais do menu */
 .nav-menu li {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #757575;
-  cursor: pointer;
+    font-size: 0.85rem; /* Tamanho da fonte. 'rem' é uma unidade responsiva (relativa ao tamanho da fonte do elemento raiz 'html') */
+    font-weight: bold; /* Texto em negrito */
+    color: #757575; /* Cor cinza */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar por cima, indicando que é clicável */
+    white-space: nowrap; /* Garante que o texto não "quebre" dentro do item do menu, mantendo-o em uma linha. */
+    display: flex; /* Para alinhar o texto e a seta */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 0.3rem; /* Espaço entre o texto e a seta */
 }
 
-/* Cor quando passar mouse */
+/* Estilo para a seta (▼) */
+.nav-menu li .arrow {
+    font-size: 0.6rem; /* Seta um pouco menor */
+    transition: transform 0.3s ease; /* Animação suave para a seta */
+}
+
+/* Cor quando passar o mouse sobre um item do menu */
 .nav-menu li:hover {
-  color: #007BFF;
+    color: #007BFF; /* Muda para azul vibrante */
 }
 
-/* Área direita da navbar: botão e campo de busca */
+/* Área direita da navbar: botão de login e campo de busca */
 .navbar-right {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+    display: flex; /* Usa Flexbox para alinhar o botão e o campo de busca lado a lado */
+    gap: 1rem; /* Espaçamento entre o botão e o campo de busca */
+    align-items: center; /* Centraliza verticalmente o botão e o campo de busca */
+    flex-shrink: 0; /* Impede que este container encolha demais */
 }
 
 /* Botão azul para login */
 .btn-login {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 0.5rem 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto branca */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 20px; /* Bordas arredondadas, criando um formato de pílula */
+    padding: 0.5rem 1.2rem; /* Padding interno: topo/base 0.5rem, laterais 1.2rem */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo ao passar o mouse */
+    flex-shrink: 0; /* Garante que o botão não encolha demais em telas pequenas */
+    white-space: nowrap; /* Impede que o texto do botão quebre */
 }
 
 .btn-login:hover {
-  background-color: #0056b3;
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
 /* Campo de busca */
 .search-input {
-  border: 1px solid #999;
-  border-radius: 20px;
-  padding: 0.4rem 0.8rem;
-  max-width: 150px;
-  outline: none;
+    border: 1px solid #999; /* Borda cinza clara de 1px */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 0.4rem 0.8rem; /* Padding interno */
+    max-width: 150px; /* Largura máxima. Isso é importante para que o campo não fique muito grande em telas largas. */
+    width: 100%; /* Permite que o campo ocupe 100% do espaço disponível até a max-width */
+    outline: none; /* Remove a borda de foco padrão do navegador ao clicar no campo */
+    font-size: 0.9rem; /* Tamanho da fonte no input */
 }
+
+/* Ícone de menu hambúrguer (inicialmente oculto) */
+.hamburger-menu {
+    display: none; /* Por padrão, oculto em telas maiores */
+    flex-direction: column; /* Para empilhar os spans */
+    justify-content: space-around; /* Espaço entre os spans */
+    width: 30px; /* Largura do ícone */
+    height: 25px; /* Altura do ícone */
+    cursor: pointer;
+    z-index: 1001; /* Garante que esteja acima de outros elementos na navbar */
+}
+
+.hamburger-menu span {
+    display: block; /* Cada "linha" do hambúrguer */
+    width: 100%; /* Ocupa a largura total do hamburger-menu */
+    height: 3px; /* Espessura da linha */
+    background-color: #333; /* Cor da linha */
+    transition: all 0.3s ease; /* Transição suave para animações */
+}
+
+/* Animação do hambúrguer para X */
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg); /* Move e rotaciona a primeira linha */
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Esconde a linha do meio */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg); /* Move e rotaciona a terceira linha */
+}
+
 
 /* ================================== */
 /* BARRA DE SUBMENU OCULTA INICIALMENTE */
 /* ================================== */
 .submenu-bar {
-  position: fixed;
-  top: 120px; /* Abaixo da navbar principal */
-  left: 0; right: 0;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  max-height: 0;        /* Altura zero quando oculto */
-  opacity: 0;           /* Invisível quando oculto */
-  overflow: hidden;     /* Esconde conteúdo quando oculto */
-  pointer-events: none; /* Não recebe clique quando oculto */
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  z-index: 998;
+    position: fixed; /* Fixo na tela */
+    top: 110px; /* Posiciona logo abaixo da navbar principal (50px header + 60px navbar = 110px) */
+    left: 0; right: 0; /* Ocupa 100% da largura */
+    background-color: #fff; /* Fundo branco */
+    display: flex; /* Usa Flexbox para os itens do submenu */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 2rem; /* Espaçamento entre os itens do submenu */
+    padding: 1rem; /* Padding interno */
+    /*
+     * max-height: 0;
+     * Altura inicial zero para esconder o submenu.
+     * Usamos max-height e não height para permitir a transição suave.
+     */
+    max-height: 0;
+    opacity: 0; /* Começa totalmente transparente */
+    overflow: hidden; /* Esconde qualquer conteúdo que exceda a altura (quando max-height é 0) */
+    /*
+     * pointer-events: none;
+     * Isso é CRUCIAL para quando o submenu está oculto! Impede que ele receba cliques ou interações,
+     * mesmo que "fisicamente" esteja lá com altura 0.
+     * Quando ele fica visível, essa propriedade é alterada para 'auto'.
+     */
+    pointer-events: none;
+    /*
+     * transition: max-height 0.5s ease, opacity 0.5s ease;
+     * Cria uma animação suave (durante 0.5 segundos) quando a altura máxima e a opacidade mudam,
+     * dando a impressão de que o submenu desliza e aparece/desaparece.
+     */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    z-index: 998; /* Abaixo da navbar, mas acima da segunda navbar e do conteúdo */
+    /*
+     * flex-wrap: wrap;
+     * Permite que os itens do submenu "quebrem" para a próxima linha em telas menores.
+     */
+    flex-wrap: wrap;
 }
 
-/* Quando ativo (classe adicionada pelo JS) */
+/* Quando o submenu está ativo (a classe 'active' é adicionada via JavaScript) */
 .submenu-bar.active {
-  max-height: 300px;
-  opacity: 1;
-  pointer-events: auto;
+    max-height: 300px; /* Aumenta a altura máxima para revelar o submenu */
+    opacity: 1; /* Torna o submenu totalmente visível */
+    pointer-events: auto; /* Permite interações de clique e mouse novamente */
 }
 
-/* Itens do submenu (imagens) */
+/* Itens do submenu (provavelmente imagens ou ícones) */
 .submenu-item {
-  height: 100px;
-  border-radius: 8px;
-  transition: box-shadow 0.4s ease;
-  cursor: pointer;
+    height: 100px; /* Altura fixa dos itens do submenu */
+    max-width: 100%; /* Garante que não transborde */
+    width: auto; /* Permite que a largura se ajuste mantendo a proporção */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    transition: box-shadow 0.4s ease; /* Transição suave para a sombra */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    object-fit: cover; /* Garante que a imagem cubra a área, cortando se necessário */
 }
 
 .submenu-item:hover {
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra ao passar o mouse */
 }
 
 /* ================================== */
 /* SEGUNDA NAVBAR FIXA ABAIXO DA PRINCIPAL */
 /* ================================== */
 .second-navbar {
-  position: fixed;
-  top: 120px; /* Logo abaixo da navbar principal */
-  left: 0; right: 0;
-  height: 60px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  z-index: 950;
+    position: fixed; /* Fixo na tela */
+    top: 110px; /* Posiciona 110px abaixo do topo, logo abaixo da navbar principal */
+    left: 0; right: 0; /* Ocupa 100% da largura */
+    height: 60px; /* Altura da segunda navbar (pode mudar em telas pequenas) */
+    background-color: #fff; /* Fundo branco */
+    border-bottom: 1px solid #ccc; /* Borda inferior levemente cinza */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Distribui espaço entre os itens */
+    padding: 0 1rem; /* Padding interno */
+    z-index: 950; /* Abaixo da navbar principal, mas acima do conteúdo */
+    gap: 1rem; /* Adiciona um espaçamento padrão entre os elementos para evitar que fiquem muito juntos em telas pequenas. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra mais leve */
 }
 
 .second-navbar-logo {
-  height: 30px;
+    height: 30px; /* Altura da logo da segunda navbar */
+    max-width: 100%; /* Responsividade para a logo */
+    object-fit: contain;
+    flex-shrink: 0; /* Impede que a logo encolha */
 }
 
 /* Menu da segunda navbar */
 .second-navbar-menu {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  flex-grow: 1;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+    list-style: none; /* Remove marcadores de lista */
+    display: flex; /* Itens lado a lado */
+    gap: 2rem; /* Espaçamento entre itens */
+    flex-grow: 1; /* Ocupa o máximo de espaço */
+    justify-content: center; /* Centraliza o menu */
+    margin: 0; padding: 0; /* Remove margens/paddings padrão */
+    flex-wrap: wrap; /* Permite que os itens "quebrem" para a próxima linha. */
 }
 
 .second-navbar-menu li {
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
+    font-weight: bold; /* Texto em negrito */
+    color: #333; /* Cor cinza escura */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    font-size: 0.9rem; /* Tamanho da fonte, use 'rem' para melhor responsividade */
 }
 
 .second-navbar-menu li:hover {
-  color: #007BFF;
+    color: #007BFF; /* Muda para azul ao passar o mouse */
 }
 
 /* Botão vermelho grande para "Assinar o Playstation Plus" */
 .btn-plus {
-  background-color: #D80027;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 0.6rem 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #D80027; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branca */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas bem arredondadas */
+    padding: 0.6rem 1.5rem; /* Padding interno */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Mãozinha */
+    transition: background-color 0.3s ease; /* Transição suave da cor */
+    flex-shrink: 0; /* Garante que o botão não encolha demais */
+    white-space: nowrap; /* Impede que o texto do botão quebre */
+    font-size: 0.9rem; /* Tamanho da fonte do botão */
 }
 
 .btn-plus:hover {
-  background-color: #a1001d;
+    background-color: #a1001d; /* Vermelho mais escuro ao passar o mouse */
 }
 
 /* ================================== */
-/* IMAGEM BANNER GRANDE */
+/* SEÇÃO DO BANNER GRANDE (IMAGEM E TEXTO SOBREPOSTO) */
 /* ================================== */
-.banner01 img {
-  display: block;       /* Remove espaço em linha abaixo da imagem */
-  width: 100vw;         /* Ocupa toda largura da viewport */
-  height: auto;         /* Mantém proporção */
-  margin: 0;
-  padding: 0;
-  border: none;
+.banner-section { /* Renomeado de .banner01 para clareza */
+    position: relative; /* Pai para elementos posicionados absolutamente */
+    width: 100vw; /* Ocupa toda largura da viewport */
+    height: auto; /* Altura se ajusta ao conteúdo */
+    /* Removido margin-top, pois o padding-top do body já cuida do espaçamento */
+    margin-top: 0; /* Garante que não haja margem extra aqui */
 }
 
-.SubtituloBanner {
-  position: relative;
-  width: 100vw;
-  height: auto;
- 
-  
+.banner-image { /* Renomeado de .banner01 img para clareza */
+    display: block; /* Remove o pequeno espaço em linha abaixo da imagem (comum em imgs) */
+    width: 100%; /* Ocupa 100% da largura do seu container (.banner-section) */
+    height: auto; /* A altura se ajusta automaticamente para manter a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem cubra toda a área, cortando se necessário */
+    /* Removido margin, padding, border pois já estão no reset ou não são necessários aqui */
 }
 
-.SubtituloBanner img {
-  width: 100%;
-  display: block;
-  height: auto;
+/* Contêiner para o texto e botão sobrepostos no banner */
+.banner-content { /* Renomeado de .SubtituloBanner para clareza */
+    position: absolute; /* Permite posicionamento livre dentro do pai (.banner-section) */
+    /*
+     * top: 52%; left: 6%;
+     * Posiciona o conteúdo do banner (título, parágrafo, botão) em relação ao seu pai.
+     * Usar porcentagens é bom para responsividade, pois ele se ajusta com o tamanho da tela.
+     * Ajuste esses valores conforme a necessidade visual para diferentes resoluções.
+     */
+    top: 52%;
+    left: 6%;
+    color: rgb(0, 0, 0); /* Cor do texto preta */
+    padding: 1rem 2rem; /* Padding interno. Pode ser ajustado. */
+    /* border-radius: 8px; *//* Removido, pois não há fundo para arredondar aqui */
+    max-width: 80%; /* Largura máxima para o conteúdo, evita que o texto fique muito largo */
+    word-wrap: break-word; /* Garante que palavras longas quebrem e não ultrapassem a largura */
+    font-style: normal; /* Garante estilo normal */
+    /*
+     * transform: translateY(-50%);
+     * Isso é um truque comum para centralizar verticalmente um elemento quando 'top' é 50%.
+     * Move o elemento para cima pela metade da sua própria altura, resultando em centralização.
+     */
+    transform: translateY(-50%);
+    display: flex; /* Usa flexbox para empilhar h2, p, button */
+    flex-direction: column; /* Itens empilhados verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
 }
 
-.SubtituloBanner {
-  position: absolute;
-  top: 52%;
-  left: 6%;
+.banner-content h2 {
+    /*
+     * clamp(min, ideal, max);
+     * Define um tamanho de fonte responsivo.
+     * min: 28px (tamanho mínimo em telas muito pequenas)
+     * ideal: 4vw (4% da largura da viewport, tamanho que se ajusta com a tela)
+     * max: 40px (tamanho máximo em telas muito grandes)
+     * Isso faz com que a fonte se adapte de forma fluida.
+     */
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 300; /* Peso da fonte mais leve */
+    letter-spacing: -0.1px; /* Ajuste sutil no espaçamento entre letras */
+    line-height: 1.2; /* Altura da linha para melhor legibilidade */
+    margin-bottom: 0.8rem; /* Espaço abaixo do título */
+}
+
+.banner-content p {
+    color: rgb(107, 107, 107); /* Cor do texto cinza */
+    max-width: 100%; /* Garante que o parágrafo ocupe 100% da largura do seu pai (.banner-content) */
+    word-wrap: break-word;
+    font-style: normal;
+    letter-spacing: 0.1px;
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    /* Tamanho da fonte responsivo para o parágrafo */
+    font-size: clamp(14px, 1.8vw, 18px);
+    margin-bottom: 1.5rem; /* Espaço abaixo do parágrafo antes do botão */
+}
+
+/* Botão de ação no banner ("Assinar Agora") */
+.btn-action { /* Renomeado de .AssineAgora para ser mais genérico e descritivo */
+    background-color: rgb(213, 59, 0); /* Cor de fundo vermelha alaranjada */
+    color: white; /* Cor do texto branca */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    padding: 0.8rem 2rem; /* Padding interno, ajustado para ser um pouco maior */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Mãozinha */
+    transition: background-color 0.3s ease; /* Transição suave */
+    /*
+     * font-size: clamp(14px, 1.2vw, 16px);
+     * Tamanho de fonte responsivo para o botão.
+     */
+    font-size: clamp(14px, 1.2vw, 16px);
+    display: inline-block; /* Permite padding e margin, mas mantém o elemento na linha do texto */
+    text-decoration: none; /* Remove sublinhado se for um link (<a>) */
+}
+
+.btn-action:hover {
+    background-color: #a1001d; /* Vermelho mais escuro ao passar o mouse */
+}
+
+.Subtitulo2  {
+ position: absolute; /* Mudado de 'centr' para 'absolute' */
+ top: 106%; /* Você pode ajustar este valor para cima ou para baixo */
+ left: 50%;   /* Move o início do elemento para o centro horizontal */
+ transform: translateX(-50%); /* Ajusta o elemento para que seu centro fique no centro horizontal */
+ color: rgb(107, 107, 107, 1);
+ padding: 1rem 2rem;
+  /* text-align: center; */ /* Esta propriedade não é necessária aqui, pois o elemento já está centralizado com 'left' e 'transform' */
+ margin-top: 0; /* Geralmente 'margin-top' não é usado com 'position: absolute', use 'top' */
+ font-size: 16px;
+ font-family: "Mont W05", "sst", Arial, sans-serif
+;
+}
+
+.Subtitulo3  {
+  position: absolute; /* Essencial para usar 'top' e 'left' */
+  top: 109%; /* Ajuste este valor para mover para cima ou para baixo */
+  left: 50%;   /* Moverá o elemento para o centro horizontal */
+  transform: translateX(-50%); /* Ajustará o elemento de volta para que seu centro fique alinhado */
   color: rgb(0, 0, 0);
   padding: 1rem 2rem;
-  border-radius: 8px;
-  max-width: 80%;
-  word-wrap: break-word;
-  font-style: normal;
-
+  /* text-align: center; */ /* Opcional, pode ser removido se o título for de uma linha */
+  margin-top: 0; /* Removido, pois 'top' já controla a posição vertical */
+  font-size: 25px;
+  text-align: center;
+  line-height: 0.9;
+  font-family: var(--dk-font-mont);;
 }
 
-.SubtituloBanner h2 {
-  font-size: 40px;
-  font-weight: 300;
-  letter-spacing: -.1px;
-  line-height: 1.;
+.galeria-fotos {
+    display: flex; /* Permite que os itens fiquem lado a lado */
+    justify-content: center; /* Centraliza as fotos no contêiner */
+    gap: 28px; /* Espaçamento entre as fotos (ajuste conforme necessário) */
+    padding: 20px; /* Padding ao redor da galeria */
+    flex-wrap: wrap; /* Permite que as fotos quebrem a linha em telas menores */
+    margin-top: 300px;
 }
 
-.SubtituloBanner p {
-  position: absolute;
-  top: 100%;
-  left: -1%;
-  color: rgb(107, 107, 107, 01);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  max-width: 80%;
-  word-wrap: break-word;
-  font-style: normal;
-  letter-spacing: 0.1px;
-   line-height: 23px;
+.btn-3 { /* Renomeado de .AssineAgora para ser mais genérico e descritivo */
+    justify-content: center; /* Centraliza as fotos no contêiner */
+    position: absolute;
+    top: 194%; /* Ajuste este valor para mover para cima ou para baixo */
+    left: 40%;   /* Moverá o elemento para o centro horizontal */
+    background-color: #007BFF; /* Cor de fundo vermelha alaranjada */
+    color: white; /* Cor do texto branca */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    padding: 0.8rem 2rem; /* Padding interno, ajustado para ser um pouco maior */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Mãozinha */
+    transition: background-color 0.3s ease; /* Transição suave */
+    /*
+     * font-size: clamp(14px, 1.2vw, 16px);
+     * Tamanho de fonte responsivo para o botão.
+     */
+    font-size: clamp(11px, 1.2vw, 16px);
+    display: inline-block; /* Permite padding e margin, mas mantém o elemento na linha do texto */
+    text-decoration: none; /* Remove sublinhado se for um link (<a>) */
+}
+
+.btn-3:hover {
+    background-color: #0056b3; /* Vermelho mais escuro ao passar o mouse */
+}
+
+.banner2 img {
+
+  display: block; /* Remove o pequeno espaço em linha abaixo da imagem (comum em imgs) */
+  width: 100%; /* Ocupa 100% da largura do seu container (.banner-section) */
+  height: auto; /* A altura se ajusta automaticamente para manter a proporção da imagem */
+  object-fit: cover; /* Garante que a imagem cubra toda a área, cortando se necessário */
+    /* Removido margin, padding, border pois já estão no reset ou não são necessários aqui */
+  margin-top: 130px;
+  margin-bottom: 40px;
   
+}
+
+
+
+
+
+
+
+/* Contêiner do interruptor */
+.toggle-switch-wrapper {
+    /* Pode adicionar padding ou margin aqui se precisar afastar de outros elementos */
+    padding: 20px; /* Apenas para demonstração, remova se não precisar */
+    position: absolute;
+    top: 246%; /* Ajuste este valor para mover para cima ou para baixo */
+    left: 14%;
 
 }
 
-/* Botão vermelho pequeno no banner para "Assine Agora" */
-.AssineAgora {
-  background-color: rgb(213, 59, 0, 1);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 0.6rem 1.5rem;
-    font-weight: bold;
+/* Esconde o checkbox padrão */
+.toggle-input {
+    display: none;
+}
+
+/* Estilo do corpo visual do interruptor (o "trilho" com as abas) */
+.toggle-label-visual {
+    display: flex; /* Para colocar os textos lado a lado */
+    position: relative; /* Para posicionar o fundo deslizante */
+    width: 320px; /* Largura total do interruptor (ajuste conforme o texto) */
+    height: 50px; /* Altura do interruptor */
+    background-color: #222; /* Cor de fundo quando "Últimas tendências" está ativo */
+    border-radius: 25px; /* Metade da altura para bordas arredondadas */
+    overflow: hidden; /* Garante que o fundo branco não vaze */
     cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    position: absolute; /* Agora o botão pode ser movido livremente */
-    /* Exemplos de posicionamento (ajuste esses valores conforme necessário): */
-    top: 165%;   /* 70% da altura do SubtituloBanner */
-    left: 2%;  /* 5% da largura do SubtituloBanner */
-    /* Ou, se quiser posicionar a partir do final: */
-    /* bottom: 20px; */
-    /* right: 30px; */
-    /* Ou centralizar horizontalmente: */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */ /* Para centralizar o próprio botão */
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.AssineAgora:hover {
-  background-color: #a1001d;
+/* Estilo do texto de cada aba */
+.toggle-text {
+    flex: 1; /* Faz cada span ocupar metade da largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0; /* Cor padrão do texto (para o fundo escuro) */
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2; /* Garante que o texto fique acima do fundo deslizante */
+    transition: color 0.3s ease; /* Transição para a cor do texto */
+}
+
+/* O fundo que se move e dá o efeito de seleção */
+.toggle-label-visual::before {
+    content: ''; /* Essencial para pseudo-elementos */
+    position: absolute;
+    top: 4px; /* Espaçamento interno */
+    left: 4px; /* Espaçamento interno */
+    width: calc(50% - 4px); /* Metade da largura - padding */
+    height: calc(100% - 8px); /* Altura total - 2*padding */
+    background-color: white; /* Cor do fundo da aba ativa */
+    border-radius: 21px; /* Ajuste para bordas arredondadas internas */
+    transition: transform 0.3s ease; /* Transição suave do movimento */
+    z-index: 1; /* Fica abaixo do texto */
+}
+
+/* Quando o checkbox está marcado (estado "Novidades") */
+.toggle-input:checked + .toggle-label-visual::before {
+    transform: translateX(calc(100% + 4px)); /* Move o fundo para a direita */
+}
+
+.toggle-input:checked + .toggle-label-visual .toggle-text.left {
+    color: #f0f0f0; /* Texto esquerdo fica claro */
+}
+
+.toggle-input:checked + .toggle-label-visual .toggle-text.right {
+    color: #333; /* Texto direito fica escuro */
+}
+
+/* Estado inicial (checkbox não marcado - "Últimas tendências") */
+.toggle-input:not(:checked) + .toggle-label-visual .toggle-text.left {
+    color: #333; /* Texto esquerdo fica escuro */
+}
+
+.toggle-input:not(:checked) + .toggle-label-visual .toggle-text.right {
+    color: #f0f0f0; /* Texto direito fica claro */
 }
 
 
 
 
 
-  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade básica (ajuste a largura se o texto não couber) */
+@media (max-width: 400px) {
+    .toggle-label-visual {
+        width: 240px; /* Reduz a largura total para telas menores */
+        height: 45px;
+        border-radius: 22.5px;
+    }
+    .toggle-label-visual::before {
+        border-radius: 19.5px; /* Ajuste o raio para a nova altura */
+        height: calc(100% - 8px); /* Continua a mesma lógica */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================== */
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+/* ================================== */
+
+/* Para telas pequenas (smartphones em modo retrato, até 768px) */
+@media (max-width: 768px) {
+    /* Ajustes para o body para acomodar o layout empilhado das navbars */
+    body {
+        /*
+         * O padding-top deve ser dinâmico para acomodar as navbars que agora podem ter
+         * alturas variáveis (quando o menu principal se empilha).
+         * Usar 'auto' ou ajustar com JS seria o mais robusto.
+         * Para simplificar aqui, vamos calcular um valor aproximado considerando as navbars colapsadas.
+         * Header (40px) + Navbar (flexível, digamos 180px) + Second Navbar (flexível, digamos 100px)
+         * Um valor fixo aqui pode não ser ideal, mas vamos usar um para demonstração.
+         */
+        padding-top: 280px; /* Ajuste este valor conforme o comportamento real das navbars colapsadas */
+    }
+
+    /* Oculta o menu hambúrguer por padrão e mostra ele em telas pequenas */
+    .hamburger-menu {
+        display: flex; /* Mostra o hambúrguer em telas pequenas */
+    }
+
+    /* Ajustes para o header */
+    header {
+        height: 40px; /* Header um pouco menor */
+        padding: 0 0.5rem; /* Menos padding nas laterais */
+    }
+
+    header img {
+        height: 30px; /* Logo Sony menor */
+    }
+
+    /* Ajustes para a navbar principal */
+    .navbar {
+        top: 40px; /* Ajusta a posição da navbar para ficar abaixo do header menor */
+        height: auto; /* Altura flexível para acomodar o menu quebrado */
+        flex-direction: row; /* Mantém a direção da linha para logo e hambúrguer */
+        padding: 0.5rem 1rem; /* Mais padding no topo/base */
+        align-items: center; /* Centraliza verticalmente o que sobrou */
+        flex-wrap: wrap; /* Permite que os itens quebrem se a tela for muito estreita */
+        justify-content: space-between; /* Distribui logo e hambúrguer */
+    }
+
+    .navbar-logo {
+        height: 30px; /* Logo Playstation menor em telas pequenas */
+    }
+
+    .nav-menu {
+        /*
+         * TRANSFORMA O MENU EM UM MENU "HAMBÚRGUER" OU MOBILE
+         * Inicialmente oculto e com largura total.
+         */
+        display: none; /* Oculta o menu por padrão em mobile */
+        flex-direction: column; /* Itens do menu empilhados verticalmente */
+        gap: 0.8rem; /* Menor espaçamento entre itens do menu */
+        width: 100%; /* Ocupa toda a largura disponível */
+        align-items: flex-start; /* Alinha itens do menu à esquerda */
+        margin-top: 0.5rem; /* Espaço acima do menu quando aberto */
+        background-color: #ffffff; /* Fundo para o menu mobile */
+        padding: 1rem 0; /* Padding interno */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Quando o menu principal estiver ativo (aberto pelo hambúrguer) */
+    .nav-menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada */
+    }
+
+    .nav-menu li {
+        font-size: 1rem; /* Tamanho da fonte ligeiramente maior para leitura fácil */
+        padding: 0.3rem 1rem; /* Adiciona padding para áreas clicáveis maiores */
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .navbar-right {
+        /* Posiciona os botões e campo de busca abaixo do logo e hambúrguer */
+        width: 100%; /* Ocupa toda a largura */
+        flex-direction: column; /* Botão e busca empilhados verticalmente */
+        gap: 0.5rem; /* Menor espaçamento */
+        align-items: stretch; /* Estica os itens para preencher a largura */
+        margin-top: 0.5rem; /* Espaço acima da área direita */
+        /* display: none; */ /* Pode ser oculto também quando o menu hambúrguer está aberto */
+    }
+
+    .btn-login, .search-input {
+        width: 100%; /* Botão e busca ocupam toda a largura */
+        max-width: none; /* Remove a largura máxima do campo de busca */
+        text-align: center; /* Centraliza o texto do botão (se for o caso) */
+    }
+
+    /* Ajustes para o submenu */
+    .submenu-bar {
+        top: 200px; /* Posição ajustada. Pode precisar de ajuste com JS para ser dinâmico */
+        flex-direction: column; /* Itens do submenu empilhados */
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .submenu-bar.active {
+        max-height: 500px; /* Aumenta a altura máxima para acomodar mais itens empilhados */
+    }
+
+    .submenu-item {
+        height: 80px; /* Itens do submenu um pouco menores */
+    }
+
+    /* Ajustes para a segunda navbar */
+    .second-navbar {
+        top: calc(40px + 60px + var(--navbar-height-mobile, 0px)); /* Mais complexo, pode precisar de JS */
+        /* O top da second-navbar precisa ser ajustado dinamicamente com JS se a navbar principal tiver altura variável. */
+        top: 180px; /* Um valor fixo para a demonstração */
+        height: auto; /* Altura flexível */
+        flex-direction: column; /* Empilha os itens */
+        padding: 0.5rem 1rem;
+        align-items: flex-start;
+        box-shadow: none; /* Remove sombra extra */
+    }
+
+    .second-navbar-logo {
+        height: 25px; /* Logo menor */
+        margin-bottom: 0.5rem;
+    }
+
+    .second-navbar-menu {
+        flex-direction: column; /* Menu da segunda navbar empilhado */
+        gap: 0.8rem;
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+        color: #ffffff
+    }
+
+    .second-navbar-menu li {
+        font-size: 0.85rem;
+    }
+
+    .btn-plus {
+        width: 100%; /* Botão "Assinar" ocupa toda a largura */
+        padding: 0.8rem 1rem; /* Ajuste no padding */
+        text-align: center;
+    }
+
+    /* Ajustes para o banner e subtítulo */
+    .banner-section {
+        margin-top: 0; /* O padding-top do body já cuida do espaço */
+    }
+
+    .banner-content {
+        top: 40%; /* Ajusta o posicionamento vertical do texto do banner */
+        left: 5%; /* Ajusta o posicionamento horizontal */
+        padding: 0.5rem 1rem; /* Menor padding */
+        max-width: 90%; /* Ocupa mais largura em telas pequenas */
+        transform: translateY(-50%); /* Garante centralização vertical */
+    }
+
+    .banner-content h2 {
+        font-size: clamp(24px, 6vw, 36px); /* Fonte um pouco menor e mais responsiva */
+        line-height: 1.1;
+    }
+
+    .banner-content p {
+        font-size: clamp(13px, 3vw, 16px); /* Fonte menor */
+        line-height: 1.4;
+        margin-bottom: 1rem; /* Espaço menor antes do botão */
+    }
+
+    .btn-action {
+        padding: 0.7rem 1.2rem; /* Botão menor */
+        font-size: clamp(13px, 2.5vw, 15px);
+        width: auto; /* Permite que o botão não estique 100% se não for desejado */
+        display: inline-block; /* Garante que flua corretamente */
+    }
+}
+
+/* Para telas médias (tablets, laptops pequenos, de 769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajustes gerais */
+    body {
+        padding-top: 170px; /* Mantém o padding top ajustado */
+    }
+
+    /* Navbar principal */
+    .navbar {
+        padding: 0 1.5rem; /* Um pouco mais de padding */
+    }
+
+    .nav-menu {
+        gap: 1.5rem; /* Espaçamento ajustado */
+        flex-wrap: wrap; /* Permite quebrar em 2 linhas se necessário */
+    }
+
+    .nav-menu li {
+        font-size: 0.8rem;
+    }
+
+    .search-input {
+        max-width: 120px; /* Campo de busca ligeiramente menor */
+    }
+
+    /* Segunda navbar */
+    .second-navbar {
+        padding: 0 1.5rem;
+    }
+
+    .second-navbar-menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .second-navbar-menu li {
+        font-size: 0.85rem;
+    }
+
+    /* Subtítulo do banner */
+    .banner-content {
+        top: 50%; /* Ajusta um pouco a posição */
+        left: 5%;
+        padding: 0.8rem 1.5rem;
+        max-width: 70%;
+        transform: translateY(-50%);
+    }
+
+    .banner-content h2 {
+        font-size: clamp(32px, 4.5vw, 40px);
+    }
+
+    .banner-content p {
+        font-size: clamp(15px, 2vw, 18px);
+    }
+
+    .btn-action {
+        padding: 0.7rem 1.8rem;
+    }
+}
+
+/* Para telas muito grandes (desktops grandes, acima de 1921px) */
+@media (min-width: 1921px) {
+    /* Podemos aumentar um pouco o tamanho de alguns elementos para preencher melhor a tela */
+    .navbar, .second-navbar, header {
+        padding: 0 3rem; /* Maior padding nas laterais */
+    }
+
+    header img {
+        height: 50px; /* Logo Sony um pouco maior */
+    }
+
+    .navbar-logo {
+        height: 50px; /* Logo Playstation maior */
+    }
+
+    .nav-menu {
+        gap: 4rem; /* Maior espaçamento entre itens do menu */
+    }
+
+    .nav-menu li {
+        font-size: 1rem;
+    }
+
+    .search-input {
+        max-width: 200px; /* Campo de busca maior */
+    }
+
+    .submenu-bar {
+        gap: 3rem;
+    }
+
+    .submenu-item {
+        height: 120px; /* Ícones do submenu maiores */
+    }
+
+    .second-navbar-logo {
+        height: 40px; /* Logo Plus maior */
+    }
+
+    .second-navbar-menu {
+        gap: 3rem;
+    }
+
+    .second-navbar-menu li {
+        font-size: 1rem;
+    }
+
+    .btn-plus {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .banner-content {
+        top: 55%; /* Ajuste fino do posicionamento */
+        left: 8%;
+        max-width: 60%; /* Conteúdo mais centralizado */
+    }
+
+    .banner-content h2 {
+        font-size: 48px; /* Título maior */
+    }
+
+    .banner-content p {
+        font-size: 20px; /* Parágrafo maior */
+    }
+
+    .btn-action {
+        padding: 0.9rem 2.2rem;
+        font-size: 18px;
+    }
+}
