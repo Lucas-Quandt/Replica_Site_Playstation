@@ -446,7 +446,7 @@ header img {
     height: auto;
     min-height: 500px;
     margin-top: 80px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     overflow: hidden;
 }
 
@@ -463,7 +463,7 @@ header img {
 /* ================================== */
 .horizontal-gallery-overlay {
     position: absolute; /* Flutua sobre o .background-banner-wrapper */
-    top: 70%; /* Centraliza verticalmente na imagem de fundo */
+    top: 65%; /* Centraliza verticalmente na imagem de fundo */
     left: 0;
     width: 100%;
     transform: translateY(-50%); /* Ajusta para centralizar o próprio elemento */
@@ -544,8 +544,8 @@ header img {
 }
 
 .card-category {
-    font-size: 0.75rem;
-    color: #999;
+    font-size: 0.60rem;
+    color: #37abf8;
     margin-bottom: 0.3rem;
     text-transform: uppercase;
     font-weight: 500;
@@ -560,7 +560,7 @@ header img {
 
 .card-description {
     font-size: clamp(0.7rem, 0.9vw, 0.85rem);
-    color: #bbb;
+    color: #ffffff;
     line-height: 1.4;
     overflow: hidden;
     text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo. */
@@ -615,7 +615,7 @@ header img {
     transform: translateX(-50%);
     z-index: 20;
     /* Ajuste este valor 'top' finamente para o seu layout em PCs */
-    top: 270vh; /* Exemplo de valor em VH. Inspecione e ajuste para o ideal. */
+    top: 245vh; /* Exemplo de valor em VH. Inspecione e ajuste para o ideal. */
     margin: 0;
     padding: 0;
 
@@ -681,6 +681,130 @@ header img {
 .toggle-input:not(:checked) + .toggle-label-visual .toggle-text.right {
     color: var(--color-text-light);
 }
+
+
+.btn-4 {
+    background-color:white;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição para o hover. */
+    flex-shrink: 0;
+    white-space: nowrap;
+    position: absolute;
+    top: 1570%;
+    left: 200%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.btn-4:hover {
+    background-color: #cfd0d1;
+}
+
+.banner3 img {
+    position: relative; /* Isso geralmente não ajuda a "colar" elementos */
+    width: 100vw; /* 100% da largura da viewport */
+    height: auto; /* Altura automática para manter a proporção */
+    min-height: 500px; /* Altura mínima de 500px */
+    margin-top: 0.1px; /* Esta margem minúscula pode ser o problema */
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: block;
+    width: 100%; /* Redundante com width: 100vw se o pai for 100% da viewport */
+    height: 100%; /* Redundante com height: auto */
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner4 img {
+    position: relative; /* Isso geralmente não ajuda a "colar" elementos */
+    width: 100vw; /* 100% da largura da viewport */
+    height: auto; /* Altura automática para manter a proporção */
+    min-height: 500px; /* Altura mínima de 500px */
+    margin-top: 0.1px; /* Esta margem minúscula pode ser o problema */
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: block;
+    width: 100%; /* Redundante com width: 100vw se o pai for 100% da viewport */
+    height: 100%; /* Redundante com height: auto */
+    object-fit: cover;
+    object-position: center;
+}
+.banner5 img {
+    position: relative; /* Isso geralmente não ajuda a "colar" elementos */
+    width: 100vw; /* 100% da largura da viewport */
+    height: auto; /* Altura automática para manter a proporção */
+    min-height: 500px; /* Altura mínima de 500px */
+    margin-top: 0.1px; /* Esta margem minúscula pode ser o problema */
+    margin-bottom: 40px;
+    overflow: hidden;
+    display: block;
+    width: 100%; /* Redundante com width: 100vw se o pai for 100% da viewport */
+    height: 100%; /* Redundante com height: auto */
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ================================== */
 /* MEDIA QUERIES PARA RESPONSIVIDADE */
@@ -788,6 +912,39 @@ header img {
         border-radius: calc(clamp(40px, 12vw, 50px) / 2 - 4px);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Para telas médias (tablets, laptops pequenos, de 769px a 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -949,3 +1106,4 @@ header img {
         border-radius: 26px;
     }
 }
+
