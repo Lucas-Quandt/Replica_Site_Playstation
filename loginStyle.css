@@ -76,7 +76,7 @@
     /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
     position: absolute !important; /* Força o posicionamento absoluto */
     top: 470px !important;        /* Força a centralização vertical */
-    left: 78.3% !important;       /* Força a centralização horizontal */
+    left: 74% !important;       /* Força a centralização horizontal */
     transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
      width: 540px;
     /* z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
@@ -89,4 +89,52 @@
 
 .btn-Seguinte:hover {
     background-color: #b9b9b9;
+}
+
+.link-container {
+    text-align: center; /* Align links to the left within their container */
+    padding: 20px;
+    position: relative;
+    top: 490px;
+    left: 460px;
+}
+
+.sony-link {
+    color: #007bff; /* Blue color similar to the image */
+    text-decoration: underline; /* Underline the text */
+    font-size: 1.2em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space between the links */
+    display: block; /* Make links block-level so they stack vertically */
+}
+
+.sony-link:hover {
+    color: #0056b3; /* Slightly darker blue on hover for interaction */
+}
+
+.btn-CriarConta {
+    background-color: #292929;
+    color: rgb(255, 255, 255);
+    border-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+     display: flex;             /* Transforma o botão em um container flexível */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
+    /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
+    position: absolute !important; /* Força o posicionamento absoluto */
+    top: 630px !important;        /* Força a centralização vertical */
+    left: 74% !important;       /* Força a centralização horizontal */
+    transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
+     width: 540px;
+    /* z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
+    
+    height: 40px !important;    /* Garante a altura */
+    font-size: 16px !important; /* Garante o tamanho da fonte */
+
+    /* Remova quaisquer outras regras de 'position', 'top', 'left', 'right', 'bottom', 'margin' que possam estar em outras media queries ou blocos para .btn-6. */
 }

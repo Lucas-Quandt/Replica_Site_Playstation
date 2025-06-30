@@ -605,7 +605,7 @@ header img {
     left: 23%;
     transform: translateX(-50%);
     z-index: 20;
-    top: 270vh;
+    top: 245vh;
     margin: 0;
     padding: 0;
 }
@@ -1315,7 +1315,7 @@ header img {
     align-items: center;       /* Centraliza o conteúdo verticalmente */
     /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
     position: absolute !important; /* Força o posicionamento absoluto */
-    top: 6820px !important;        /* Força a centralização vertical */
+    top: 7080px !important;        /* Força a centralização vertical */
     left: 50% !important;       /* Força a centralização horizontal */
     transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
      width: 600px;
@@ -1346,7 +1346,7 @@ header img {
     align-items: center;       /* Centraliza o conteúdo verticalmente */
     /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
     position: absolute !important; /* Força o posicionamento absoluto */
-    top: 6880px !important;        /* Força a centralização vertical */
+    top: 7130px !important;        /* Força a centralização vertical */
     left: 50% !important;       /* Força a centralização horizontal */
     transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
      width: 450px;
