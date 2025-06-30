@@ -7,21 +7,18 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Definir a variável CSS para a fonte, se não estiver globalmente */
         :root {
-            --dk-font-mont: "Montserrat", sans-serif; /* Substitua "Montserrat" pela sua "Mont W05" se tiver o arquivo/link */
+            --dk-font-mont: "Montserrat", sans-serif;
         }
     </style>
 </head>
 <body>
-
     <header>
         <img src="img/logoSony.webp" alt="Logo Sony" />
     </header>
 
     <nav class="navbar">
         <img src="img/logoPlaystation.png" alt="Logo Playstation" class="navbar-logo" />
-
         <ul class="nav-menu">
             <li data-submenu="menu1">Jogos<span class="arrow">▼</span></li>
             <li data-submenu="menu2">PS5<span class="arrow">▼</span></li>
@@ -32,15 +29,13 @@
             <li data-submenu="menu7">Loja<span class="arrow">▼</span></li>
             <li data-submenu="menu8">Suporte<span class="arrow">▼</span></li>
         </ul>
-
         <div class="hamburger-menu" id="hamburger-menu">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
         <div class="navbar-right">
-            <button class="btn-login">Iniciar Sessão</button>
+            <a href="pagTelaIniciarSessao.html" class="btn-login">Iniciar Sessão</a>
             <input type="text" class="search-input" placeholder="Pesquisar" />
         </div>
     </nav>
@@ -57,12 +52,13 @@
         <button class="btn-plus">Assinar o Playstation Plus</button>
     </nav>
 
+
     <div class="banner-section">
         <img src="img/banner01.png" alt="Banner Playstation" class="banner-image" />
         <div class="banner-content">
             <h2>Novos mundos aguardam<br>você com o PlayStation<br>Plus</h2>
             <p>Descubra um universo de novas experiências com três planos de assinatura<br>do PlayStation Plus, incluindo o acesso a centenas de jogos entre o catálogo<br>de jogos, o catálogo de clássicos e a experimentação de jogos.</p>
-            <button class="btn-action">Assinar Agora</button>
+            <button class="btn-action">Assine Agora</button>
         </div>
     </div>
 
@@ -70,26 +66,21 @@
         <div class="Subtitulo2">
             <h4>PLAYSTATION PLUS EM RESUMO</h4>
         </div>
-
         <div class="Subtitulo3">
             <h1>ÓTIMOS BENEFÍCIOS<br>PARA TODOS OS TIPOS DE<br>JOGADORES</h1>
         </div>
-
         <div class="galeria-fotos">
             <img src="img/FotoKratos.png" alt="Descrição da Foto 1" class="foto-item">
             <img src="img/FotoHelldavers.png" alt="Descrição da Foto 2" class="foto-item">
             <img src="img/FotoDesconto.png" alt="Descrição da Foto 3" class="foto-item">
         </div>
-
         <button class="btn-3">Veja todos os benefícios do PlayStation Plus</button>
     </section>
 
     <div class="background-banner-wrapper">
         <img src="img/Banner02.png" alt="Banner de Fundo da Galeria" class="background-banner-image">
-
         <div class="horizontal-gallery-overlay">
             <div class="horizontal-scroll-gallery">
-
                 <div class="gallery-card">
                     <img src="img/imgFirebreak.png" alt="FBC: Firebreak">
                     <div class="card-content">
@@ -98,7 +89,6 @@
                         <p class="card-description">Integre um trio e investigue um surto paranormal no Departamento Federal de Controle.</p>
                     </div>
                 </div>
-
                 <div class="gallery-card">
                     <img src="img/imgGhostofTsushima.png" alt="Ghost of Tsushima Versão do Diretor">
                     <div class="card-content">
@@ -107,7 +97,6 @@
                         <p class="card-description">Descubra as maravilhas ocultas de Tsushima nesse jogo de ação e aventura em mundo aberto da Sucker Punch Productions e da PlayStation Studios.</p>
                     </div>
                 </div>
-
                 <div class="gallery-card">
                     <img src="img/imgBluePrince.png" alt="Blue Prince">
                     <div class="card-content">
@@ -116,16 +105,14 @@
                         <p class="card-description">Embarque em uma experiência que foge das definições convencionais, com uma mistura única de mistério, estratégia e quebra-cabeça que se entrelaçam para criar uma jornada imprevisível.</p>
                     </div>
                 </div>
-
                 <div class="gallery-card">
                     <img src="img/imgSpiderman.png" alt="Marvel's Spider-Man: Miles Morales">
                     <div class="card-content">
                         <span class="card-category">Ação/Aventura</span>
                         <h3 class="card-title">Marvel's Spider-Man: Miles Morales</h3>
-                        <p class="card-description">Ajude Miles Morales a assumir o título de Spider-Man e dominar seus poderes incriveis para tentar salvar Nova York.</p>
+                        <p class="card-description">Ajude Miles Morales a assumir o título de Spider-Man e dominar seus poderes incríveis para tentar salvar Nova York.</p>
                     </div>
                 </div>
-
                 <div class="gallery-card">
                     <img src="img/imgGodofWar.png" alt="God of War Ragnarök">
                     <div class="card-content">
@@ -134,26 +121,458 @@
                         <p class="card-description">Junte-se a Kratos e Atreus em sua jornada épica para impedir o Ragnarök neste aclamado título.</p>
                     </div>
                 </div>
-
+                <div class="gallery-card">
+                    <img src="img/imgRainbow.png" alt="Rainbow six siege">
+                    <div class="card-content">
+                        <span class="card-category">Jogo de Tiro</span>
+                        <h3 class="card-title">Rainbow Six Siege</h3>
+                        <p class="card-description">Experimente intensos combates a curta distância em um jogo de tiro explosivo e realista baseado em equipes, onde planejamento e execução precisos são essenciais para vencer</p>
+                    </div>
                 </div>
-            <button class="gallery-arrow left-arrow" aria-label="Anterior">&#10094;</button>
-            <button class="gallery-arrow right-arrow" aria-label="Próximo">&#10095;</button>
+                <div class="gallery-card">
+                    <img src="img/imgHogwarts.png" alt="Hogwarts Legacy">
+                    <div class="card-content">
+                        <span class="card-category">Único</span>
+                        <h3 class="card-title">Hogwarts Legacy</h3>
+                        <p class="card-description">Vivencie Hogwarts Legacy no final dos anos 1800 no imersivo RPG de ação de mundo aberto, Hogwarts Legacy, e decida o destino do mundo bruxo.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="img/imgUFC.png" alt="EA Sports UFC 5">
+                    <div class="card-content">
+                        <span class="card-category">Luta</span>
+                        <h3 class="card-title">EA SPORTS UFC 5</h3>
+                        <p class="card-description">Entre nos combates de UFC mais realistas do mundo dos jogos, com um novo sistema autêntico de danos que dá vida à intensidade e à estratégia das lutas.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="img/imgJedi.png" alt="Star Wars Jedi: Survivor">
+                    <div class="card-content">
+                        <span class="card-category">Ação</span>
+                        <h3 class="card-title">Star Wars Jedi: Survivor</h3>
+                        <p class="card-description">Fique um passo à frente do império numa aventura emocionante construída sobre as histórias, os mundos e os personagens clássicos de STAR WARS.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="gallery-arrow left-arrow" aria-label="Anterior">❮</button>
+            <button class="gallery-arrow right-arrow" aria-label="Próximo">❯</button>
         </div>
     </div>
+
     <div class="toggle-switch-wrapper">
         <input type="checkbox" id="myToggle" class="toggle-input">
         <label for="myToggle" class="toggle-label-visual">
             <span class="toggle-text left">Últimas tendências</span>
             <span class="toggle-text right">Novidades</span>
         </label>
+        <button class="btn-4">Confira todos os jogos</button>
     </div>
 
+    <div class="banner3">
+        <img src="img/banner03.png" alt="banner3">
+        <a href="#" class="btn-5">Veja seus planos de assinatura disponíveis</a>
+        <p class="frase-no-banner">Recursos exclusivos do PlayStation 5*</p> 
+    </div>
+    
+        
+    <div class="banner4">
+        <img src="img/banner04.png" alt="banner4">
+        <a href="#" class="btn-6">Vamos lá</a>
+    </div>
+
+    <!-- Nova seção de cards integrada como a última -->
+   <section class="benefits-section">
+    <div class="cards-gallery-container">
+        <img src="img/banner06.png" alt="Background Benefits" class="background-image">
+        <div class="toggle-switch-container">
+            <div class="toggle-buttons" id="toggleButtons">
+                <button class="toggle-button active" data-category="todos">Todos os benefícios disponíveis</button>
+                <button class="toggle-button" data-category="deluxe">Deluxe</button>
+                <button class="toggle-button" data-category="extra">Extra</button>
+                <button class="toggle-button" data-category="essencial">Essencial</button>
+            </div>
+        </div>
+
+        <button class="cards-gallery-arrow left-arrow" aria-label="Anterior">❮</button>
+        <button class="cards-gallery-arrow right-arrow" aria-label="Próximo">❯</button>
+        <div class="cards-wrapper">
+            <div id="todos" class="category-cards active">
+                <div class="card">
+                    <div class="card-image-wrapper yellow-bg">
+                        <img src="img/imgCatalogosJogosPlaysta.png" alt="Catálogo de jogos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de jogos do PlayStation Plus</h3>
+                    <p>Explore um universo de experiências incríveis com acesso a centenas de jogos.</p>
+                    <button class="card-button">Explore o catálogo</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgJogosMensais.png" alt="Jogos mensais" class="card-icon">
+                    </div>
+                    <h3>Jogos mensais</h3>
+                    <p>Expanda sua coleção de jogos com novos títulos para resgatar todo mês.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgCatalogosClassicos.png" alt="Catálogo de clássicos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de clássicos</h3>
+                    <p>Jogue os clássicos da história do PlayStation.</p>
+                    <button class="card-button">Veja todos os clássicos</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgExperimentacaodeJogos.png" alt="Experimentação de jogos" class="card-icon">
+                    </div>
+                    <h3>Experimentação de jogos</h3>
+                    <p>Experimente jogos para PS5 e PS4 antes de comprá-los.</p>
+                    <button class="card-button">Mais recentes</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgModoMultiplayer.png" alt="Catálogo de clássicos" class="card-icon">
+                    </div>
+                    <h3>Modo multiplayer online</h3>
+                    <p>Junte-se a seus amigos e outros jogadores e descubra novos mundos para jogar.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgUbisoft+classicos.png" alt="Ubisoft+Classics" class="card-icon">
+                    </div>
+                    <h3>Ubisoft+Classics</h3>
+                    <p>Jogue uma seleção de classicos com Ubisoft+Classics.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgConteudoExclusivo.png" alt="Conteúdo Exclusivo" class="card-icon">
+                    </div>
+                    <h3>Conteúdo Exclusivo</h3>
+                    <p>Personalize suas aventuras com conteúdo exclusivo para diversos jogos gratuidos.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgDescontosExclusivos.png" alt="Desconstos Exclusivos" class="card-icon">
+                    </div>
+                    <h3>Descontos Exclusivos</h3>
+                    <p>Ganhe Acesso exclusivo a ofertas em diversos jogos, Expansões, pré-vendas e mais na Playstation Store.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgArmazenamentoNuvem.png" alt="Armazenamento em Nuvem" class="card-icon">
+                    </div>
+                    <h3>Armazenamento em Nuvem</h3>
+                    <p>Guarde seus arquivos de jogos salvos e baixe-os em outros consoles.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgSharePlay.png" alt="Share Play" class="card-icon">
+                    </div>
+                    <h3>Share Play</h3>
+                    <p>Convide Amigos para participar de seu jogo ou assumir o controle no console deles.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+            </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->         
+            <div id="deluxe" class="category-cards">
+                 <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgJogosMensais.png" alt="Jogos mensais" class="card-icon">
+                    </div>
+                    <h3>Jogos mensais</h3>
+                    <p>Expanda sua coleção de jogos com novos títulos para resgatar todo mês.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgExperimentacaodeJogos.png" alt="Experimentação de jogos" class="card-icon">
+                    </div>
+                    <h3>Experimentação de jogos</h3>
+                    <p>Experimente jogos para PS5 e PS4 antes de comprá-los.</p>
+                    <button class="card-button">Mais recentes</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgArmazenamentoNuvem.png" alt="Armazenamento em Nuvem" class="card-icon">
+                    </div>
+                    <h3>Armazenamento em Nuvem</h3>
+                    <p>Guarde seus arquivos de jogos salvos e baixe-os em outros consoles.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgDescontosExclusivos.png" alt="Desconstos Exclusivos" class="card-icon">
+                    </div>
+                    <h3>Descontos Exclusivos</h3>
+                    <p>Ganhe Acesso exclusivo a ofertas em diversos jogos, Expansões, pré-vendas e mais na Playstation Store.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgConteudoExclusivo.png" alt="Conteúdo Exclusivo" class="card-icon">
+                    </div>
+                    <h3>Conteúdo Exclusivo</h3>
+                    <p>Personalize suas aventuras com conteúdo exclusivo para diversos jogos gratuidos.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper yellow-bg">
+                        <img src="img/imgCatalogosJogosPlaysta.png" alt="Catálogo de jogos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de jogos do PlayStation Plus</h3>
+                    <p>Explore um universo de experiências incríveis com acesso a centenas de jogos.</p>
+                    <button class="card-button">Explore o catálogo</button>
+                </div>
+            </div>
+
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+
+
+            <div id="extra" class="category-cards">
+               <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgModoMultiplayer.png" alt="Catálogo de clássicos" class="card-icon">
+                    </div>
+                    <h3>Modo multiplayer online</h3>
+                    <p>Junte-se a seus amigos e outros jogadores e descubra novos mundos para jogar.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgUbisoft+classicos.png" alt="Ubisoft+Classics" class="card-icon">
+                    </div>
+                    <h3>Ubisoft+Classics</h3>
+                    <p>Jogue uma seleção de classicos com Ubisoft+Classics.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper yellow-bg">
+                        <img src="img/imgCatalogosJogosPlaysta.png" alt="Catálogo de jogos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de jogos do PlayStation Plus</h3>
+                    <p>Explore um universo de experiências incríveis com acesso a centenas de jogos.</p>
+                    <button class="card-button">Explore o catálogo</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgSharePlay.png" alt="Share Play" class="card-icon">
+                    </div>
+                    <h3>Share Play</h3>
+                    <p>Convide Amigos para participar de seu jogo ou assumir o controle no console deles.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgCatalogosClassicos.png" alt="Catálogo de clássicos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de clássicos</h3>
+                    <p>Jogue os clássicos da história do PlayStation.</p>
+                    <button class="card-button">Veja todos os clássicos</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgExperimentacaodeJogos.png" alt="Experimentação de jogos" class="card-icon">
+                    </div>
+                    <h3>Experimentação de jogos</h3>
+                    <p>Experimente jogos para PS5 e PS4 antes de comprá-los.</p>
+                    <button class="card-button">Mais recentes</button>
+                </div>
+            </div>
+
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+
+
+            <div id="essencial" class="category-cards">
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgArmazenamentoNuvem.png" alt="Armazenamento em Nuvem" class="card-icon">
+                    </div>
+                    <h3>Armazenamento em Nuvem</h3>
+                    <p>Guarde seus arquivos de jogos salvos e baixe-os em outros consoles.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgDescontosExclusivos.png" alt="Desconstos Exclusivos" class="card-icon">
+                    </div>
+                    <h3>Descontos Exclusivos</h3>
+                    <p>Ganhe Acesso exclusivo a ofertas em diversos jogos, Expansões, pré-vendas e mais na Playstation Store.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper black-bg">
+                        <img src="img/imgConteudoExclusivo.png" alt="Conteúdo Exclusivo" class="card-icon">
+                    </div>
+                    <h3>Conteúdo Exclusivo</h3>
+                    <p>Personalize suas aventuras com conteúdo exclusivo para diversos jogos gratuidos.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper yellow-bg">
+                        <img src="img/imgCatalogosJogosPlaysta.png" alt="Catálogo de jogos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de jogos do PlayStation Plus</h3>
+                    <p>Explore um universo de experiências incríveis com acesso a centenas de jogos.</p>
+                    <button class="card-button">Explore o catálogo</button>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper grey-bg">
+                        <img src="img/imgJogosMensais.png" alt="Jogos mensais" class="card-icon">
+                    </div>
+                    <h3>Jogos mensais</h3>
+                    <p>Expanda sua coleção de jogos com novos títulos para resgatar todo mês.</p>
+                    <button class="card-button">Saiba mais</button>
+                </div>
+                 <div class="card">
+                    <div class="card-image-wrapper yellow-bg">
+                        <img src="img/imgCatalogosJogosPlaysta.png" alt="Catálogo de jogos" class="card-icon">
+                    </div>
+                    <h3>Catálogo de jogos do PlayStation Plus</h3>
+                    <p>Explore um universo de experiências incríveis com acesso a centenas de jogos.</p>
+                    <button class="card-button">Explore o catálogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="Subtitulo4">
+        <h1>ESCOLHA SEU PLANO DE<br>ASSINATURA</h1>
+        <p>Escolha entre três novas opções de assinatura para obter os jogos e os benefícios<br> desejados.</p>
+    </div>
+
+<section class="image-gallery-section">
+    <div class="gallery-buttons">
+        <button class="gallery-btn deluxe" data-image="image1">DELUXE</button>
+        <button class="gallery-btn extra" data-image="image2">EXTRA</button>
+        <button class="gallery-btn essencial" data-image="image3">ESSENCIAL</button>
+    </div>
+
+    <div class="gallery-images">
+        <img id="image1" src="img/imgDeluxe.png" alt="Descrição da Imagem 1" class="gallery-image active">
+        <img id="image2" src="img/imgExtra.png" alt="Descrição da Imagem 2" class="gallery-image">
+        <img id="image3" src="img/imgEssencial.png" alt="Descrição da Imagem 3" class="gallery-image">
+    </div>
+
+    <a href="#" class="btn-7">Inicie uma sessão para ver suas opções de plano de assinatura</a>
+    <a href="#" class="btn-8">Como acumular planos ou alterar seu plano</a>
+
+</section>
+
+
+
+
+
+
+
+<body>
+
+    <div class="faq-area-background">
+    <div class="Subtitulo5">
+        <h1>PERGUNTAS FREQUENTES</h1>
+        <p>Obtenha respostas para algumas das perguntas mais comuns sobre o PlayStation Plus.</p>
+    </div>
+        <section class="faq-section">
+        <h2>Perguntas gerais sobre o PlayStation Plus</h2>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Eu preciso ter o PlayStation Plus para jogar todos os jogos online?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Para a maioria dos jogos comprados em disco ou baixados da PlayStation Store, será necessário um plano de assinatura do PlayStation Plus para jogar online.</p>
+            <p>A maior parte dos jogos gratuitos, como Fortnite, Apex Legends e Call of Duty Warzone, não precisam de assinatura.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Os jogos do PlayStation Plus serão meus para sempre?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>A resposta para esta pergunta depende dos termos e condições do PlayStation Plus. Geralmente, os jogos são acessíveis enquanto sua assinatura estiver ativa.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Quais descontos terei como assinante?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Assinantes do PlayStation Plus geralmente têm acesso a descontos exclusivos na PlayStation Store em jogos e complementos.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Como faço downgrade da assinatura do PlayStation Plus de PS Plus Deluxe ou PS Plus Extra para um plano com menos benefícios?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Você pode gerenciar sua assinatura e opções de downgrade nas configurações da sua conta PlayStation. Recomenda-se verificar o site oficial da PlayStation para obter instruções detalhadas.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Tenho um voucher de assinatura de um mês, três meses ou doze meses do PlayStation Plus ou do PlayStation Now. O que acontecerá se eu o resgatar?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Ao resgatar um voucher, o tempo de assinatura correspondente será adicionado à sua conta. Se você já tem uma assinatura, o tempo será estendido.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Quanto custa o PlayStation Plus?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Os preços do PlayStation Plus variam de acordo com o plano e a duração da assinatura. Consulte a PlayStation Store para ver os preços atuais.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Com que frequência os jogos do PlayStation Plus são atualizados?
+            <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>Novos jogos são geralmente adicionados à coleção do PlayStation Plus mensalmente, mas a frequência e a seleção podem variar.</p>
+        </div>
+    </div>
+</section>
+</div>
+
+ <div class="banner7">
+        <img src="img/imgBanner07.png" alt="banner4">
+ </div>
+
+ <div class="banner8">
+        <img src="img/imgBanner08.png" alt="banner4">
+ </div>
+
+
+
+
+
+
+
     <script>
-        // Dados dos submenus. Cada chave (ex: 'menu1') corresponde ao 'data-submenu' de um item do menu principal.
-        // O valor é um array com os caminhos das imagens (ou outros conteúdos) para aquele submenu.
+        // Dados dos submenus
         const submenuData = {
             menu1: ['img/imgSubmenu01.png', 'img/imgSubmenu02.png', 'img/imgSubmenu03.png', 'img/imgSubmenu04.png', 'img/imgSubmenu05.png'],
-            menu2: ['img/imgSubmenuPS5_1.png', 'img/imgSubmenuPS5_2.png', 'img/imgSubmenuPS5_3.png'],
+            menu2: ['img/imgSubmenu01.png', 'img/imgPS5Pro.png', 'img/imgJogos.png', 'img/imgControles.png', 'img/imgSubmenu03.png', 'img/imgAudio.png'],
             menu3: ['img/imgSubmenuPS4_1.png', 'img/imgSubmenuPS4_2.png', 'img/imgSubmenuPS4_3.png'],
             menu4: ['img/imgSubmenuServicos_1.png', 'img/imgSubmenuServicos_2.png'],
             menu5: ['img/imgSubmenuAcessorios_1.png', 'img/imgSubmenuAcessorios_2.png'],
@@ -166,13 +585,12 @@
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const navMenu = document.querySelector('.nav-menu');
 
+        // Submenu
         document.querySelectorAll('.nav-menu li').forEach(item => {
             item.addEventListener('click', (event) => {
                 event.stopPropagation();
-
                 const key = item.getAttribute('data-submenu');
                 const options = submenuData[key];
-
                 const isActive = submenuBar.classList.contains('active');
                 const isSameMenu = submenuBar.dataset.activeMenu === key;
 
@@ -207,6 +625,7 @@
             }
         });
 
+        // Hamburger Menu
         hamburgerMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburgerMenu.classList.toggle('active');
@@ -219,28 +638,24 @@
             }
         });
 
-        // ===================================
-        // Script para a Nova Galeria Horizontal
-        // ===================================
+        // Galeria Horizontal
         const horizontalGallery = document.querySelector('.horizontal-scroll-gallery');
         const leftArrow = document.querySelector('.gallery-arrow.left-arrow');
         const rightArrow = document.querySelector('.gallery-arrow.right-arrow');
 
         if (horizontalGallery) {
-            // Rolar com o mouse (scroll wheel)
             horizontalGallery.addEventListener('wheel', (event) => {
-                event.preventDefault(); // Impede a rolagem vertical da página
+                event.preventDefault();
                 horizontalGallery.scrollLeft += event.deltaY;
             });
 
-            // Rolar com o drag do mouse (clicar e arrastar)
             let isDown = false;
             let startX;
             let scrollLeft;
 
             horizontalGallery.addEventListener('mousedown', (e) => {
                 isDown = true;
-                horizontalGallery.classList.add('active-drag'); // Adiciona classe para feedback visual (opcional)
+                horizontalGallery.classList.add('active-drag');
                 startX = e.pageX - horizontalGallery.offsetLeft;
                 scrollLeft = horizontalGallery.scrollLeft;
             });
@@ -259,14 +674,12 @@
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - horizontalGallery.offsetLeft;
-                const walk = (x - startX) * 2; // Multiplicador para velocidade de arrasto
+                const walk = (x - startX) * 2;
                 horizontalGallery.scrollLeft = scrollLeft - walk;
             });
 
-            // Funcionalidade das setas de navegação
             if (leftArrow && rightArrow) {
                 const updateArrowVisibility = () => {
-                    // tolerance para considerar "cheio" (ajusta para arredondamento de pixels)
                     const scrollTolerance = 5;
                     leftArrow.style.display = horizontalGallery.scrollLeft > scrollTolerance ? 'flex' : 'none';
                     rightArrow.style.display = horizontalGallery.scrollLeft < (horizontalGallery.scrollWidth - horizontalGallery.clientWidth - scrollTolerance) ? 'flex' : 'none';
@@ -274,23 +687,577 @@
 
                 leftArrow.addEventListener('click', () => {
                     horizontalGallery.scrollBy({
-                        left: -horizontalGallery.offsetWidth / 1.5, // Rola uma fração da largura visível
+                        left: -horizontalGallery.offsetWidth / 1.5,
                         behavior: 'smooth'
                     });
                 });
 
                 rightArrow.addEventListener('click', () => {
                     horizontalGallery.scrollBy({
-                        left: horizontalGallery.offsetWidth / 1.5, // Rola uma fração da largura visível
+                        left: horizontalGallery.offsetWidth / 1.5,
                         behavior: 'smooth'
                     });
                 });
 
                 horizontalGallery.addEventListener('scroll', updateArrowVisibility);
-                // Chama uma vez para definir o estado inicial e após um pequeno delay para garantir o render
                 setTimeout(updateArrowVisibility, 100);
             }
         }
+
+        // Remova o segundo e terceiro document.addEventListener('DOMContentLoaded', function() { ... });
+// E cole a lógica da galeria de cards diretamente no primeiro.
+// O arquivo final deve ter APENAS UM document.addEventListener('DOMContentLoaded', ...);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Código existente do Submenu (Navbar Principal) ---
+    const submenuData = { /* ... seu objeto submenuData ... */ };
+    const submenuBar = document.getElementById('submenu-bar');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    // Lógica do Submenu (mantida)
+    document.querySelectorAll('.nav-menu li').forEach(item => { /* ... */ });
+    document.addEventListener('click', (e) => { /* ... */ });
+    hamburgerMenu.addEventListener('click', () => { /* ... */ });
+    window.addEventListener('resize', () => { /* ... */ });
+
+
+    // --- Código existente da Galeria Horizontal (horizontal-scroll-gallery) ---
+    const horizontalGallery = document.querySelector('.horizontal-scroll-gallery');
+    const leftArrow = document.querySelector('.gallery-arrow.left-arrow');
+    const rightArrow = document.querySelector('.gallery-arrow.right-arrow');
+
+    if (horizontalGallery) {
+        horizontalGallery.addEventListener('wheel', (event) => { /* ... */ });
+        // Eventos de drag (mousedown, mouseleave, mouseup, mousemove) (mantidos)
+        horizontalGallery.addEventListener('mousedown', (e) => { /* ... */ });
+        horizontalGallery.addEventListener('mouseleave', () => { /* ... */ });
+        horizontalGallery.addEventListener('mouseup', () => { /* ... */ });
+        horizontalGallery.addEventListener('mousemove', (e) => { /* ... */ });
+
+        if (leftArrow && rightArrow) {
+            const updateArrowVisibility = () => { /* ... */ }; // Esta função é para a GALERIA DE CIMA
+            leftArrow.addEventListener('click', () => { /* ... */ });
+            rightArrow.addEventListener('click', () => { /* ... */ });
+            horizontalGallery.addEventListener('scroll', updateArrowVisibility);
+            setTimeout(updateArrowVisibility, 100);
+        }
+    }
+
+    // --- Lógica para a Galeria de Imagens Interativa (gallery-btn, gallery-image) ---
+    const galleryButtons = document.querySelectorAll('.gallery-btn');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+
+    const showImage = (imageId) => { /* ... */ }; // Esta função é para a GALERIA ABAIXO DO SUBTITULO4
+    galleryButtons.forEach(button => { /* ... */ });
+    const initialActiveButtonImage = document.querySelector('.gallery-btn.deluxe'); // Nomeei diferente para não confundir
+    if (initialActiveButtonImage) {
+        initialActiveButtonImage.click();
+    }
+
+
+    // --- Lógica para o FAQ ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => { /* ... */ });
+
+
+    // --- Lógica da sua NOVA SEÇÃO DE CARDS (benefits-section) ---
+    // ESTA É A PARTE QUE PRECISA DE MAIS ATENÇÃO
+    const cardsWrapperBenefits = document.querySelector('.benefits-section .cards-wrapper'); // Seletor mais específico
+    const cardsLeftArrowBenefits = document.querySelector('.benefits-section .cards-gallery-arrow.left-arrow'); // Seletor mais específico
+    const cardsRightArrowBenefits = document.querySelector('.benefits-section .cards-gallery-arrow.right-arrow'); // Seletor mais específico
+    const toggleButtonsBenefits = document.querySelectorAll('.benefits-section .toggle-button'); // Seletor mais específico
+    const categoryCardContainersBenefits = document.querySelectorAll('.benefits-section .category-cards'); // Seletor mais específico
+
+    if (cardsWrapperBenefits && cardsLeftArrowBenefits && cardsRightArrowBenefits && toggleButtonsBenefits.length > 0 && categoryCardContainersBenefits.length > 0) {
+
+        const updateCardsArrowVisibilityBenefits = () => { // Renomeada para evitar conflito
+            const scrollTolerance = 5;
+            const activeCategoryCardsContainer = cardsWrapperBenefits.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer) {
+                cardsLeftArrowBenefits.style.display = 'none';
+                cardsRightArrowBenefits.style.display = 'none';
+                return;
+            }
+
+            const totalContentWidth = activeCategoryCardsContainer.scrollWidth;
+            const visibleWrapperWidth = cardsWrapperBenefits.clientWidth;
+
+            if (totalContentWidth <= visibleWrapperWidth + scrollTolerance) {
+                cardsLeftArrowBenefits.style.display = 'none';
+                cardsRightArrowBenefits.style.display = 'none';
+                return;
+            }
+
+            const canScrollLeft = cardsWrapperBenefits.scrollLeft > scrollTolerance;
+            const canScrollRight = cardsWrapperBenefits.scrollLeft < (totalContentWidth - visibleWrapperWidth - scrollTolerance);
+
+            cardsLeftArrowBenefits.style.display = canScrollLeft ? 'flex' : 'none';
+            cardsRightArrowBenefits.style.display = canScrollRight ? 'flex' : 'none';
+        };
+
+        const getCardAndGapWidthBenefits = () => { // Renomeada para evitar conflito
+            const activeCategoryCardsContainer = cardsWrapperBenefits.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+                return 0;
+            }
+            const firstCard = activeCategoryCardsContainer.children[0];
+            const cardWidth = firstCard.offsetWidth;
+            const gap = 20;
+            return cardWidth + gap;
+        };
+
+        // Event listener para rolar para a esquerda (benefícios)
+        cardsLeftArrowBenefits.addEventListener('click', () => {
+            const scrollAmount = getCardAndGapWidthBenefits();
+            cardsWrapperBenefits.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Event listener para rolar para a direita (benefícios)
+        cardsRightArrowBenefits.addEventListener('click', () => {
+            const activeCategoryCardsContainer = cardsWrapperBenefits.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+                return;
+            }
+
+            const cardAndGapWidth = getCardAndGapWidthBenefits();
+            const cardsToScroll = Math.max(1, Math.floor(cardsWrapperBenefits.clientWidth / cardAndGapWidth) - 1);
+            let targetScrollLeft = cardsWrapperBenefits.scrollLeft + (cardsToScroll * cardAndGapWidth);
+
+            const maxScrollLeft = activeCategoryCardsContainer.scrollWidth - cardsWrapperBenefits.clientWidth;
+
+            if (targetScrollLeft > maxScrollLeft) {
+                targetScrollLeft = maxScrollLeft;
+            }
+
+            cardsWrapperBenefits.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'smooth'
+            });
+        });
+
+        // Eventos para reavaliar a visibilidade das setas (benefícios)
+        cardsWrapperBenefits.addEventListener('scroll', updateCardsArrowVisibilityBenefits);
+        window.addEventListener('resize', updateCardsArrowVisibilityBenefits);
+
+        // --- Lógica para os botões de Toggle de Categoria (benefícios) ---
+        toggleButtonsBenefits.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove 'active' de todos os botões de toggle
+                toggleButtonsBenefits.forEach(btn => btn.classList.remove('active'));
+                // Adiciona 'active' ao botão clicado
+                button.classList.add('active');
+
+                const category = button.dataset.category;
+                const targetCategoryContainer = document.getElementById(category);
+
+                // Esconde todas as categorias e mostra a alvo
+                categoryCardContainersBenefits.forEach(container => {
+                    container.classList.remove('active');
+                });
+
+                if (targetCategoryContainer) {
+                    targetCategoryContainer.classList.add('active');
+                }
+
+                // Reseta a rolagem e atualiza a visibilidade das setas
+                cardsWrapperBenefits.scrollLeft = 0;
+                setTimeout(updateCardsArrowVisibilityBenefits, 100);
+            });
+        });
+
+        // Chamada inicial para configurar a visibilidade das setas e a categoria ativa padrão
+        setTimeout(() => {
+            const defaultButton = document.querySelector('.benefits-section .toggle-button.active');
+            if (defaultButton) {
+                // Simula um clique no botão padrão para ativar a categoria e as setas
+                defaultButton.click();
+            } else {
+                updateCardsArrowVisibilityBenefits(); // Se não há botão ativo, apenas atualiza as setas
+            }
+        }, 200);
+
+    } else {
+        console.warn("Um ou mais elementos essenciais para a galeria de cards de benefícios não foram encontrados. Verifique seletores ou HTML.");
+    }
+});
+
+        // --- Lógica para a Galeria de Imagens Interativa ---
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM Carregado. Iniciando script da galeria.");
+
+    const galleryButtons = document.querySelectorAll('.gallery-btn');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+
+    if (galleryButtons.length === 0 || galleryImages.length === 0) {
+        console.error("Erro: Elementos da galeria não encontrados. Verifique seletores CSS ('.gallery-btn' ou '.gallery-image') ou o posicionamento do script.");
+    } else {
+        console.log("Elementos da galeria encontrados: ", galleryButtons.length, " botões e ", galleryImages.length, " imagens.");
+    }
+
+    // Função para exibir uma imagem e ocultar as outras
+    const showImage = (imageId) => {
+        console.log("Tentando exibir imagem com ID:", imageId);
+
+        // Oculta todas as imagens
+        galleryImages.forEach(img => {
+            if (img.classList.contains('active')) { // Verifica se já tem a classe antes de remover
+                img.classList.remove('active');
+                console.log("Removida classe 'active' da imagem:", img.id);
+            }
+        });
+
+        // Remove a classe 'active-btn' de todos os botões
+        galleryButtons.forEach(btn => {
+            if (btn.classList.contains('active-btn')) { // Verifica se já tem a classe antes de remover
+                btn.classList.remove('active-btn');
+                console.log("Removida classe 'active-btn' do botão:", btn.textContent);
+            }
+        });
+
+        // Encontra e exibe a imagem correspondente
+        const targetImage = document.getElementById(imageId);
+        if (targetImage) {
+            targetImage.classList.add('active');
+            console.log("Adicionada classe 'active' à imagem:", targetImage.id);
+        } else {
+            console.error("Erro: Imagem alvo não encontrada com ID:", imageId);
+        }
+    };
+
+    // Adiciona evento de clique a cada botão da galeria
+    galleryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log("Botão clicado:", button.textContent);
+            const imageToShow = button.dataset.image; // Pega o ID da imagem do atributo data-image
+            console.log("Valor do data-image para mostrar:", imageToShow);
+            showImage(imageToShow);
+            button.classList.add('active-btn'); // Adiciona a classe para estilo de botão ativo
+            console.log("Adicionada classe 'active-btn' ao botão clicado:", button.textContent);
+        });
+    });
+
+    // Define qual botão deve estar ativo inicialmente
+    const initialActiveButton = document.querySelector('.gallery-btn.deluxe'); // O botão DELUXE inicia ativo
+    if (initialActiveButton) {
+        console.log("Simulando clique inicial para:", initialActiveButton.textContent);
+        initialActiveButton.click(); // Simula um clique para exibir a primeira imagem e ativar o botão
+    } else {
+        console.warn("Aviso: Botão inicial '.gallery-btn.deluxe' não encontrado. A primeira imagem pode não ser exibida inicialmente.");
+    }
+});
+
+ document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                // Seleciona o elemento pai (faq-item)
+                const faqItem = this.closest('.faq-item');
+                // Seleciona a resposta dentro do mesmo item
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                // Alterna a classe 'active' na pergunta
+                this.classList.toggle('active');
+                // Alterna a classe 'active' na resposta para controlar a altura e o padding
+                faqAnswer.classList.toggle('active');
+
+                // Ajusta a altura máxima da resposta para animar suavemente
+                if (faqAnswer.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+                } else {
+                    faqAnswer.style.maxHeight = '0';
+                }
+            });
+        });
+    });
+
+
+   // --- Lógica para os botões de seta da Galeria de Cards (benefits-section) ---
+document.addEventListener('DOMContentLoaded', function() {
+    const cardsWrapper = document.querySelector('.cards-wrapper');
+    const cardsLeftArrow = document.querySelector('.cards-gallery-arrow.left-arrow');
+    const cardsRightArrow = document.querySelector('.cards-gallery-arrow.right-arrow');
+    const toggleButtons = document.querySelectorAll('.toggle-button');
+
+    if (cardsWrapper && cardsLeftArrow && cardsRightArrow) {
+
+        const updateCardsArrowVisibility = () => {
+            const scrollTolerance = 5; // Pequena tolerância para o final/início da rolagem
+
+            // Esconde ambas as setas se o conteúdo for menor ou igual à área visível
+            if (cardsWrapper.scrollWidth <= cardsWrapper.clientWidth + scrollTolerance) {
+                cardsLeftArrow.style.display = 'none';
+                cardsRightArrow.style.display = 'none';
+                return;
+            }
+
+            const canScrollLeft = cardsWrapper.scrollLeft > scrollTolerance;
+            // Para 'canScrollRight', verificamos se ainda há conteúdo à direita para rolar
+            const canScrollRight = cardsWrapper.scrollLeft < (cardsWrapper.scrollWidth - cardsWrapper.clientWidth - scrollTolerance);
+
+            cardsLeftArrow.style.display = canScrollLeft ? 'flex' : 'none';
+            cardsRightArrow.style.display = canScrollRight ? 'flex' : 'none';
+        };
+
+        const getCardAndGapWidth = () => {
+            const activeCategoryCardsContainer = cardsWrapper.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+                return 0; // Retorna 0 se não houver cards ativos
+            }
+            // Pega o primeiro card da categoria ativa para obter a largura e o gap
+            const firstCard = activeCategoryCardsContainer.children[0];
+            const cardComputedStyle = window.getComputedStyle(firstCard);
+            const cardWidth = firstCard.offsetWidth; // Largura total do card (incluindo padding/border)
+            // Tenta obter o gap do estilo computado, ou usa um valor padrão se não encontrar
+            // Como você usa 'gap: 20px;' no .category-cards, o gap não estará no card em si.
+            // Precisamos garantir que ele seja considerado.
+            // A forma mais segura é pegar um gap do CSS ou inferir.
+            const gap = 20; // Seu CSS define 'gap: 20px' para .category-cards
+
+            return cardWidth + gap;
+        };
+
+        // Event listener para rolar para a esquerda
+        cardsLeftArrow.addEventListener('click', () => {
+            const scrollAmount = getCardAndGapWidth();
+            cardsWrapper.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Event listener para rolar para a direita
+        cardsRightArrow.addEventListener('click', () => {
+            const activeCategoryCardsContainer = cardsWrapper.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+                return;
+            }
+
+            const cardAndGapWidth = getCardAndGapWidth();
+            const cardsInView = Math.floor(cardsWrapper.clientWidth / cardAndGapWidth); // Quantos cards cabem na tela (aproximadamente)
+
+            let targetScrollLeft = cardsWrapper.scrollLeft + (cardsInView * cardAndGapWidth);
+
+            // Calcula o scroll máximo possível para o final dos cards
+            const maxScrollLeft = activeCategoryCardsContainer.scrollWidth - cardsWrapper.clientWidth;
+
+            // Se o targetScrollLeft calculado exceder o maxScrollLeft, ajuste para o maxScrollLeft
+            // Isso garante que a rolagem pare no final do último card visível, sem espaço extra.
+            if (targetScrollLeft > maxScrollLeft) {
+                targetScrollLeft = maxScrollLeft;
+            }
+
+            cardsWrapper.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'smooth'
+            });
+        });
+
+
+        // Eventos para reavaliar a visibilidade das setas
+        cardsWrapper.addEventListener('scroll', updateCardsArrowVisibility);
+        window.addEventListener('resize', updateCardsArrowVisibility);
+
+        // Ação ao clicar nos botões de toggle
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Ao trocar de categoria, volte ao início e atualize as setas
+                cardsWrapper.scrollLeft = 0;
+                // Um pequeno atraso é crucial para que o navegador recalcule as larguras após a mudança de categoria.
+                setTimeout(updateCardsArrowVisibility, 50);
+            });
+        });
+
+        // Chamada inicial para configurar a visibilidade das setas
+        setTimeout(updateCardsArrowVisibility, 200);
+    } else {
+        console.warn("Elementos para rolagem da galeria de cards não encontrados. Verifique seletores ou HTML.");
+    }
+});
+
+
+
+
+
+
+
+
+// O código JavaScript permanece o MESMO que te passei na penúltima resposta.
+document.addEventListener('DOMContentLoaded', function() {
+    const cardsWrapper = document.querySelector('.cards-wrapper');
+    const cardsLeftArrow = document.querySelector('.cards-gallery-arrow.left-arrow');
+    const cardsRightArrow = document.querySelector('.cards-gallery-arrow.right-arrow');
+    const toggleButtons = document.querySelectorAll('.toggle-button');
+    const categoryCardContainers = document.querySelectorAll('.category-cards'); // Seleciona todos os contêineres de categoria
+
+    // --- Funções Auxiliares ---
+    const updateCardsArrowVisibility = () => {
+        const scrollTolerance = 5; // Pequena tolerância para o final/início da rolagem
+
+        // Importante: precisamos olhar para a categoria ATIVA para o scrollWidth
+        const activeCategoryCardsContainer = cardsWrapper.querySelector('.category-cards.active');
+        if (!activeCategoryCardsContainer) {
+            cardsLeftArrow.style.display = 'none';
+            cardsRightArrow.style.display = 'none';
+            return;
+        }
+
+        // A rolagem acontece no cardsWrapper, mas o conteúdo vem do activeCategoryCardsContainer
+        const totalContentWidth = activeCategoryCardsContainer.scrollWidth;
+        const visibleWrapperWidth = cardsWrapper.clientWidth;
+
+        // Esconde ambas as setas se o conteúdo for menor ou igual à área visível do wrapper
+        if (totalContentWidth <= visibleWrapperWidth + scrollTolerance) {
+            cardsLeftArrow.style.display = 'none';
+            cardsRightArrow.style.display = 'none';
+            return;
+        }
+
+        const canScrollLeft = cardsWrapper.scrollLeft > scrollTolerance;
+        // Verifica se ainda há algo para rolar para a direita
+        const canScrollRight = cardsWrapper.scrollLeft < (totalContentWidth - visibleWrapperWidth - scrollTolerance);
+
+        cardsLeftArrow.style.display = canScrollLeft ? 'flex' : 'none';
+        cardsRightArrow.style.display = canScrollRight ? 'flex' : 'none';
+    };
+
+    const getCardAndGapWidth = () => {
+        const activeCategoryCardsContainer = cardsWrapper.querySelector('.category-cards.active');
+        if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+            return 0;
+        }
+        const firstCard = activeCategoryCardsContainer.children[0];
+        const cardWidth = firstCard.offsetWidth;
+        const gap = 20; // Seu CSS define 'gap: 20px' para .category-cards
+        return cardWidth + gap;
+    };
+
+    // --- Inicialização e Event Listeners ---
+    if (cardsWrapper && cardsLeftArrow && cardsRightArrow && toggleButtons.length > 0 && categoryCardContainers.length > 0) {
+
+        // Event listener para rolar para a esquerda
+        cardsLeftArrow.addEventListener('click', () => {
+            const scrollAmount = getCardAndGapWidth();
+            cardsWrapper.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Event listener para rolar para a direita
+        cardsRightArrow.addEventListener('click', () => {
+            const activeCategoryCardsContainer = cardsWrapper.querySelector('.category-cards.active');
+            if (!activeCategoryCardsContainer || activeCategoryCardsContainer.children.length === 0) {
+                return;
+            }
+
+            const cardAndGapWidth = getCardAndGapWidth();
+            const cardsToScroll = Math.max(1, Math.floor(cardsWrapper.clientWidth / cardAndGapWidth) - 1);
+            let targetScrollLeft = cardsWrapper.scrollLeft + (cardsToScroll * cardAndGapWidth);
+
+            const maxScrollLeft = activeCategoryCardsContainer.scrollWidth - cardsWrapper.clientWidth;
+
+            if (targetScrollLeft > maxScrollLeft) {
+                targetScrollLeft = maxScrollLeft;
+            }
+
+            cardsWrapper.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'smooth'
+            });
+        });
+
+        // Eventos para reavaliar a visibilidade das setas
+        cardsWrapper.addEventListener('scroll', updateCardsArrowVisibility);
+        window.addEventListener('resize', updateCardsArrowVisibility);
+
+        // --- Lógica para os botões de Toggle de Categoria ---
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. Remove 'active' de todos os botões de toggle
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                // 2. Adiciona 'active' ao botão clicado
+                button.classList.add('active');
+
+                // 3. Obtém a categoria que deve ser exibida
+                const category = button.dataset.category;
+                const targetCategoryContainer = document.getElementById(category);
+
+                // 4. Esconde todas as categorias e mostra a alvo
+                categoryCardContainers.forEach(container => {
+                    container.classList.remove('active');
+                    // IMPORTANTE: Se o cards-wrapper é flex, pode ser que precisamos
+                    // garantir que apenas UM item flex esteja visível
+                    // Isso é controlado pela classe 'active'
+                });
+
+                if (targetCategoryContainer) {
+                    targetCategoryContainer.classList.add('active');
+                }
+
+                // 6. Reseta a rolagem e atualiza a visibilidade das setas
+                cardsWrapper.scrollLeft = 0;
+                // Um atraso um pouco maior pode ser útil aqui para garantir que o DOM se estabilize.
+                setTimeout(updateCardsArrowVisibility, 100);
+            });
+        });
+
+        // Chamada inicial para configurar a visibilidade das setas e a categoria ativa padrão
+        setTimeout(() => {
+            const defaultButton = document.querySelector('.toggle-button.active');
+            if (defaultButton) {
+                const defaultCategory = defaultButton.dataset.category;
+                const defaultCategoryContainer = document.getElementById(defaultCategory);
+
+                if (defaultCategoryContainer) {
+                    categoryCardContainers.forEach(container => container.classList.remove('active'));
+                    defaultCategoryContainer.classList.add('active');
+                }
+            }
+            updateCardsArrowVisibility();
+        }, 200);
+
+    } else {
+        console.warn("Um ou mais elementos essenciais para a galeria de cards ou toggle de categorias não foram encontrados. Verifique seletores ou HTML.");
+    }
+});
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

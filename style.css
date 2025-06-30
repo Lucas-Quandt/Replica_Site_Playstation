@@ -4,8 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; é crucial para layouts responsivos.
-       Faz com que padding e bordas sejam incluídos na largura/altura do elemento. */
     box-sizing: border-box;
 }
 
@@ -13,29 +11,22 @@
 /* ESTILIZAÇÕES GERAIS DE PÁGINA */
 /* ================================== */
 html {
-    /* Define a fonte base para unidades 'rem'. 100% geralmente equivale a 16px. */
     font-size: 100%;
-    /* Ativa a rolagem suave ao navegar para âncoras (links internos). */
     scroll-behavior: smooth;
 }
 
 body {
-    /* Define a família de fontes para o corpo. 'Montserrat' é a primeira escolha. */
     font-family: 'Montserrat', Arial, sans-serif;
-    /* Garante que o corpo ocupe pelo menos toda a altura da viewport. */
     min-height: 100vh;
-    /* Evita barras de rolagem horizontais indesejadas. */
     overflow-x: hidden;
-    /* Permite rolagem vertical apenas quando o conteúdo excede a altura da viewport. */
     overflow-y: auto;
-    /* Adiciona padding no topo para as navbars fixas não cobrirem o conteúdo. */
     padding-top: 170px;
-    /* Define o body como contexto de posicionamento para elementos absolutos flutuantes. */
     position: relative;
+    background-color: #ffffff; /* Cinza claro de fundo */
 }
 
 /* ================================== */
-/* VARIÁVEIS CSS (PARA FÁCIL MANUTENÇÃO DE CORES E FONTES) */
+/* VARIÁVEIS CSS */
 /* ================================== */
 :root {
     --color-primary-blue: #007BFF;
@@ -44,7 +35,7 @@ body {
     --color-text-light: #f0f0f0;
     --color-gray-medium: #757575;
     --color-gray-light: #ccc;
-    --dk-font-mont: "Montserrat", sans-serif; /* Usando Montserrat do Google Fonts */
+    --dk-font-mont: "Montserrat", sans-serif;
 }
 
 /* ================================== */
@@ -53,21 +44,23 @@ body {
 header {
     background-color: black;
     border-bottom: 3px solid #444;
-    position: fixed; /* Mantém o header visível ao rolar. */
-    top: 0; left: 0; right: 0; /* Ocupa a largura total no topo. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 50px;
-    z-index: 1000; /* Garante que fique acima de outros elementos. */
-    display: flex; /* Usa Flexbox para alinhamento interno. */
-    align-items: center; /* Centraliza verticalmente o conteúdo. */
-    justify-content: flex-end; /* Alinha a logo Sony à direita. */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     padding: 0 1rem;
-    overflow: hidden; /* Garante que nada transborde. */
+    overflow: hidden;
 }
 
 header img {
-    height: 88px; /* Altura da logo Sony. */
+    height: 88px;
     max-width: 100%;
-    object-fit: contain; /* Redimensiona a imagem para caber, mantendo proporção. */
+    object-fit: contain;
 }
 
 /* ================================== */
@@ -75,33 +68,35 @@ header img {
 /* ================================== */
 .navbar {
     position: fixed;
-    top: 50px; /* Posiciona logo abaixo do header. */
-    left: 0; right: 0;
+    top: 50px;
+    left: 0;
+    right: 0;
     height: 60px;
     background-color: white;
-    z-index: 999; /* Abaixo do header, mas acima do conteúdo. */
+    z-index: 999;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribui itens (logo esq, menu centro, botões dir). */
+    justify-content: space-between;
     padding: 0 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para destaque. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .navbar-logo {
     height: 40px;
     max-width: 100%;
     object-fit: contain;
-    flex-shrink: 0; /* Impede que a logo encolha. */
+    flex-shrink: 0;
 }
 
 .nav-menu {
-    list-style: none; /* Remove marcadores de lista. */
+    list-style: none;
     display: flex;
-    gap: 3rem; /* Espaçamento entre os itens do menu. */
-    flex-grow: 1; /* Permite que o menu ocupe espaço livre. */
-    margin: 0; padding: 0;
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores (responsivo). */
-    justify-content: center; /* Centraliza o menu. */
+    gap: 3rem;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-menu li {
@@ -109,7 +104,7 @@ header img {
     font-weight: bold;
     color: var(--color-gray-medium);
     cursor: pointer;
-    white-space: nowrap; /* Impede que o texto quebre. */
+    white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -117,7 +112,7 @@ header img {
 
 .nav-menu li .arrow {
     font-size: 0.6rem;
-    transition: transform 0.3s ease; /* Animação para a seta. */
+    transition: transform 0.3s ease;
 }
 
 .nav-menu li:hover {
@@ -132,20 +127,21 @@ header img {
 }
 
 .btn-login {
-    background-color: var(--color-primary-blue);
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 20px;
     padding: 0.5rem 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição para o hover. */
+    transition: background-color 0.3s ease;
     flex-shrink: 0;
     white-space: nowrap;
+    text-decoration: none; 
 }
 
 .btn-login:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
 }
 
 .search-input {
@@ -158,7 +154,6 @@ header img {
     font-size: 0.9rem;
 }
 
-/* Ícone de menu hambúrguer (inicialmente oculto) */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -174,16 +169,17 @@ header img {
     width: 100%;
     height: 3px;
     background-color: var(--color-text-dark);
-    transition: all 0.3s ease; /* Animação para o ícone do hambúrguer. */
+    transition: all 0.3s ease;
 }
 
-/* Animação do hambúrguer para X */
 .hamburger-menu.active span:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
+
 .hamburger-menu.active span:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger-menu.active span:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
 }
@@ -193,26 +189,27 @@ header img {
 /* ================================== */
 .submenu-bar {
     position: fixed;
-    top: 110px; /* Posiciona abaixo da navbar principal. */
-    left: 0; right: 0;
+    top: 110px;
+    left: 0;
+    right: 0;
     background-color: #fff;
     display: flex;
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
-    max-height: 0; /* Oculta o submenu. */
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
-    pointer-events: none; /* Impede interações quando oculto. */
-    transition: max-height 0.5s ease, opacity 0.5s ease; /* Animação suave. */
+    pointer-events: none;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
     z-index: 998;
     flex-wrap: wrap;
 }
 
 .submenu-bar.active {
-    max-height: 300px; /* Revela o submenu. */
+    max-height: 300px;
     opacity: 1;
-    pointer-events: auto; /* Permite interações. */
+    pointer-events: auto;
 }
 
 .submenu-item {
@@ -234,8 +231,9 @@ header img {
 /* ================================== */
 .second-navbar {
     position: fixed;
-    top: 110px; /* Posiciona abaixo da navbar principal. */
-    left: 0; right: 0;
+    top: 110px;
+    left: 0;
+    right: 0;
     height: 60px;
     background-color: #fff;
     border-bottom: 1px solid var(--color-gray-light);
@@ -261,7 +259,8 @@ header img {
     gap: 2rem;
     flex-grow: 1;
     justify-content: center;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     flex-wrap: wrap;
 }
 
@@ -296,7 +295,7 @@ header img {
 }
 
 /* ================================== */
-/* SEÇÃO DO BANNER GRANDE (IMAGEM E TEXTO SOBREPOSTO) */
+/* SEÇÃO DO BANNER GRANDE */
 /* ================================== */
 .banner-section {
     position: relative;
@@ -315,7 +314,8 @@ header img {
 
 .banner-content {
     position: absolute;
-    top: 52%; left: 6%;
+    top: 52%;
+    left: 6%;
     color: rgb(0, 0, 0);
     padding: 1rem 2rem;
     max-width: 80%;
@@ -418,8 +418,8 @@ header img {
 .btn-3 {
     display: block;
     margin: 50px auto 0 auto;
-    background-color: var(--color-primary-blue);
-    color: white;
+    background-color: #0056b3;;
+    color: #ffffff;
     border: none;
     border-radius: 30px;
     padding: 0.8rem 2rem;
@@ -434,11 +434,11 @@ header img {
 }
 
 .btn-3:hover {
-    background-color: #0056b3;
+    background-color: #0070cc;
 }
 
 /* ================================== */
-/* BANNER DE FUNDO PARA A NOVA GALERIA (banner2) */
+/* BANNER DE FUNDO PARA A GALERIA HORIZONTAL */
 /* ================================== */
 .background-banner-wrapper {
     position: relative;
@@ -446,7 +446,7 @@ header img {
     height: auto;
     min-height: 500px;
     margin-top: 80px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     overflow: hidden;
 }
 
@@ -459,93 +459,86 @@ header img {
 }
 
 /* ================================== */
-/* NOVA GALERIA HORIZONTAL COM EFEITOS E ROLAGEM (Corrigido) */
+/* NOVA GALERIA HORIZONTAL */
 /* ================================== */
 .horizontal-gallery-overlay {
-    position: absolute; /* Flutua sobre o .background-banner-wrapper */
-    top: 70%; /* Centraliza verticalmente na imagem de fundo */
+    position: absolute; /* Mantenha como absoluto em relação ao .background-banner-wrapper */
+    top: 65%;
     left: 0;
     width: 100%;
-    transform: translateY(-50%); /* Ajusta para centralizar o próprio elemento */
-    z-index: 5; /* Abaixo do toggle-switch, mas acima do banner de fundo */
-    padding: 0 40px; /* Espaçamento lateral para as setas e início/fim da galeria */
+    transform: translateY(-50%);
+    z-index: 5;
+    padding: 0 40px; /* Mantém o padding para os lados */
     box-sizing: border-box;
-    display: flex; /* Para posicionar as setas de navegação */
-    align-items: center; /* Alinha setas e galeria */
+    display: flex; /* Mantenha como flex para alinhar a galeria e as setas */
+    align-items: center; /* Centraliza verticalmente a galeria e as setas */
 }
 
 .horizontal-scroll-gallery {
     display: flex;
-    overflow-x: scroll; /* Garante que a barra de rolagem horizontal esteja disponível */
-    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-    /* Remover barra de rolagem visual (mantém funcionalidade) */
-    scrollbar-width: none; /* Para Firefox */
-    -ms-overflow-style: none; /* Para IE/Edge */
-    padding: 20px 0; /* Padding vertical para dar espaço ao conteúdo dos cards */
-    flex-grow: 1; /* Permite que a galeria ocupe o espaço disponível entre as setas */
-    gap: 12px; /* Espaçamento entre os cards, reduzido */
-    cursor: grab; /* Cursor de "arrastar" padrão */
-    user-select: none; /* Impede a seleção de texto ao arrastar */
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0;
+    flex-grow: 1; /* Permite que a galeria ocupe o espaço restante entre as setas */
+    gap: 12px;
+    cursor: grab;
+    user-select: none;
 }
-/* Esconde o scrollbar para WebKit (Chrome, Safari) */
+
 .horizontal-scroll-gallery::-webkit-scrollbar {
     display: none;
 }
-/* Feedback visual para arrastar (cursor de "arrastando") */
+
 .horizontal-scroll-gallery.active-drag {
     cursor: grabbing;
 }
 
-
-/* Estilo para cada CARD individual da galeria (Com transição e hover) */
 .gallery-card {
-    flex-shrink: 0; /* Impede que o card encolha */
-    width: clamp(220px, 18vw, 280px); /* Largura responsiva para cada card */
-    background-color: #1a1a1a; /* Fundo escuro do card para evitar o "quadrado branco" */
+    flex-shrink: 0;
+    width: clamp(220px, 18vw, 280px);
+    background-color: #1a1a1a;
     border-radius: 8px;
-    overflow: hidden; /* Importante para cortar o conteúdo que sairia da borda e para o hover funcionar */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Transição para o efeito de zoom e sombra */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Indica que é clicável/interativo */
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: auto; /* Altura automática baseada no conteúdo */
-    min-height: 380px; /* Altura mínima para o card */
-    position: relative; /* Pode ser útil para z-index em hover ou outros elementos internos */
-    
+    height: auto;
+    min-height: 380px;
+    position: relative;
 }
 
-/* Efeito de zoom e destaque ao passar o mouse */
 .gallery-card:hover {
-    transform: scale(1.04); /* Aumenta o tamanho em 4% */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Sombra mais intensa */
-    z-index: 10; /* Garante que o card em hover fique por cima dos vizinhos */
+    transform: scale(1.04);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    z-index: 10;
 }
 
 .gallery-card img {
-    width: 100%; /* Preenche 100% da largura do card */
-
+    width: 100%;
     display: block;
-    object-fit: contain; /* Faz a imagem cobrir o espaço, cortando o que transborda */
-    object-position: center top; /* Centraliza horizontalmente e alinha ao topo */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha fina de separação */
+    object-fit: contain;
+    object-position: center top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card-content {
     padding: 1rem;
     color: white;
     text-align: left;
-    flex-grow: 1; /* Ocupa o espaço restante. */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Empurra o conteúdo para o final do card. */
-    position: relative; 
+    justify-content: flex-end;
+    position: relative;
 }
 
 .card-category {
-    font-size: 0.75rem;
-    color: #999;
+    font-size: 0.60rem;
+    color: #37abf8;
     margin-bottom: 0.3rem;
     text-transform: uppercase;
     font-weight: 500;
@@ -560,51 +553,49 @@ header img {
 
 .card-description {
     font-size: clamp(0.7rem, 0.9vw, 0.85rem);
-    color: #bbb;
+    color: #ffffff;
     line-height: 1.4;
     overflow: hidden;
-    text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo. */
-    display: -webkit-box; /* Para limitar linhas em WebKit. */
-    -webkit-line-clamp: 3; /* Limita a 3 linhas. */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+ 
     -webkit-box-orient: vertical;
     margin-top: 0.5rem;
 }
 
-/* Estilos para as setas de navegação */
 .gallery-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+   position: absolute; /* Posicionado absolutamente em relação ao .horizontal-gallery-overlay */
+    top: 50%; /* Centraliza verticalmente dentro do overlay */
+    transform: translateY(-50%); /* Ajuste fino para centralizar o próprio botão */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    color: white; /* Cor da seta */
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Círculo */
     width: 50px;
     height: 50px;
     font-size: 1.8rem;
     cursor: pointer;
-    display: flex; /* Para centralizar o ícone da seta. */
+    display: flex; /* Para centralizar o ícone ❮/❯ */
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-    opacity: 0.8; /* Levemente transparente por padrão. */
+    z-index: 10; /* Garante que as setas fiquem acima dos cards e do banner de fundo */
+    opacity: 0.8;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; (Já está no seu código) */
 }
 
 .gallery-arrow:hover {
     background-color: rgba(0, 0, 0, 0.9);
-    transform: translateY(-50%) scale(1.1); /* Leve aumento no hover. */
+    transform: translateY(-50%) scale(1.1);
     opacity: 1;
 }
 
 .gallery-arrow.left-arrow {
-    left: 5px; /* Posição à esquerda. */
+    left: 5px;
 }
 
 .gallery-arrow.right-arrow {
-    right: 5px; /* Posição à direita. */
+    right: 5px;
 }
-
 
 /* ================================== */
 /* INTERRUPTOR (TOGGLE SWITCH) */
@@ -614,11 +605,9 @@ header img {
     left: 23%;
     transform: translateX(-50%);
     z-index: 20;
-    /* Ajuste este valor 'top' finamente para o seu layout em PCs */
-    top: 270vh; /* Exemplo de valor em VH. Inspecione e ajuste para o ideal. */
+    top: 270vh;
     margin: 0;
     padding: 0;
-
 }
 
 .toggle-input {
@@ -682,51 +671,1134 @@ header img {
     color: var(--color-text-light);
 }
 
+.btn-4 {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+    position: absolute;
+    top: 1490%;
+    left: 190%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.btn-4:hover {
+    background-color: #cfd0d1;
+}
+
+/* ================================== */
+/* BANNERS 3 E 4 */
+/* ================================== */
+.banner3 img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    margin-top: 0.1px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;  
+}
+
+.banner4 img {
+    position: relative; 
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    margin-top: 0.1px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0; 
+}
+
+.banner4 {
+    position: relative; /* ESSENCIAL */
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+.frase-no-banner {
+    position: absolute; /* Posiciona a frase de forma absoluta em relação ao .banner4 */
+    z-index: 12; /* Um z-index maior que o do botão para garantir que ela fique por cima (ou o mesmo se quiser que um possa cobrir o outro) */
+
+    /* Posicionamento da frase (ajuste conforme necessário) */
+    top: 41.5%; /* Exemplo: Um pouco acima do centro */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para que o PRÓPRIO CENTRO da frase fique no ponto (top, left) */
+
+    /* Estilos visuais da frase */
+    color: rgb(0, 0, 0); /* Cor do texto da frase */
+    font-size: clamp(0.9rem, 2.0vw, 0.3rem); /* Tamanho da fonte responsivo */
+    text-align: center; /* Centraliza o texto dentro do contêiner da frase */
+    width: 80%; /* Limita a largura da frase para que ela não se espalhe demais e ocupe várias linhas */
+    max-width: 600px; /* Garante que a frase não fique muito larga em telas grandes */
+    line-height: 1.2; /* Espaçamento entre linhas */
+}
+
+.btn-5 {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: clamp(11px, 1.3vw, 15px);
+    text-decoration: none;
+    /* --- PROPRIEDADES DE POSICIONAMENTO PARA FICAR ACIMA DA IMAGEM --- */
+    position: absolute; /* Tira o botão do fluxo normal e o posiciona em relação ao .banner4 */
+    z-index: 10; /* MUITO IMPORTANTE: Garante que o botão fique visível sobre a imagem (valor > qualquer outro elemento sobreposto) */
+    /* Exemplo: Centralizando o botão (posição mais comum em banners) */
+    top: 41%; /* Ponto de partida vertical (50% da altura do .banner4) */
+    left: 50%; /* Ponto de partida horizontal (50% da largura do .banner4) */
+    transform: translate(-50%, -50%); /* Ajusta a posição para que o PRÓPRIO CENTRO do botão fique no centro do .banner4 */
+    /* Se você quiser o botão em outro lugar (ex: canto inferior esquerdo), use: */
+    /* bottom: 20px; */
+    /* left: 20px; */
+    /* top, right, e transform seriam removidos neste caso */
+}
+
+.btn-5:hover {
+    background-color: #007bff;
+}
+
+.btn-6 {
+    background-color: #0056b3;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+     display: flex;             /* Transforma o botão em um container flexível */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
+    /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
+    position: absolute !important; /* Força o posicionamento absoluto */
+    top: 80% !important;        /* Força a centralização vertical */
+    left: 18% !important;       /* Força a centralização horizontal */
+    transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
+     width: 450px;
+    /*z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
+    
+    height: 40px !important;    /* Garante a altura */
+    font-size: 16px !important; /* Garante o tamanho da fonte */
+
+    /* Remova quaisquer outras regras de 'position', 'top', 'left', 'right', 'bottom', 'margin' que possam estar em outras media queries ou blocos para .btn-6. */
+}
+
+.btn-6:hover {
+    background-color: #007bff;
+}
+
+/* ================================== */
+/* NOVA SEÇÃO DE CARDS (BENEFITS-SECTION) */
+/* ================================== */
+.benefits-section {
+    width: 100vw;
+    padding: 0; /* Removido padding vertical para encostar em .banner4 */
+    margin: 0 0 40px 0; /* Removido margin-top: 80px para encostar em .banner4 */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.cards-gallery-container {
+    width: 100vw;
+    /* Remover min-height aqui se a altura deve vir da imagem ou do conteúdo. */
+    /* Se você quer que a imagem de fundo SEMPRE defina a altura, pode usar padding-bottom ou um height fixo. */
+    /* Mas, para ser "totalmente independente", a imagem DEVE preencher a altura do contêiner. */
+    /* Então, precisamos garantir que cards-gallery-container tenha uma altura. */
+
+    /* Altura será definida pelo que está DENTRO ou por uma altura fixa */
+    /* height: 600px;  <-- Exemplo de altura fixa se a imagem tem uma altura definida */
+    /* Ou, mais dinâmico: */
+    min-height: calc(100vw * 400 / 1920 + 400px); /* Garante altura suficiente para a imagem e o conteúdo (400px de padding-top dos cards-wrapper + margens) */
+    position: relative; /* Mantenha como relative para os filhos absolutos */
+    overflow: hidden; /* Importante para garantir que a imagem de fundo não vaze */
+    /* z-index: 0; */ /* Opcional, se o pai da section tiver z-index */
+}
+
+/* A Imagem de Fundo */
+.background-image {
+    width: 100%;
+    height: 100%; /* FUNDAMENTAL: A imagem de fundo agora tentará preencher 100% da altura do seu PAI (.cards-gallery-container) */
+    object-fit: cover; /* MUDANÇA IMPORTANTE: Use 'cover' para que ela preencha o contêiner sem barras, mas pode cortar a imagem */
+    /* Se você *realmente* quer a imagem inteira sem cortes, use 'contain',
+       mas esteja ciente que ela NÃO VAI PREENCHER TODO O ESPAÇO, podendo deixar barras vazias.
+       Se esse for o caso, defina o background-color do .cards-gallery-container para a cor das barras.
+       Ex: background-color: #f0f0f0; e object-fit: contain;
+    */
+    object-position: center; /* Centraliza a imagem */
+    display: block;
+    position: absolute; /* FUNDAMENTAL: Tira a imagem do fluxo normal, ela não empurrará outros elementos */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Garante que ela esteja no fundo, abaixo dos outros elementos (toggle, cards, setas) */
+    /* Remova min-height e aspect-ratio se height: 100% e object-fit: cover já controlam tudo. */
+    /* min-height: calc(100vw * 400 / 1920); */ /* Pode ser removido */
+    /* aspect-ratio: 1920 / 400; */ /* Pode ser removido, pois 'cover' já gerencia a proporção */
+}
+
+/* Ajustes para os outros elementos (para garantir que estejam acima da imagem de fundo) */
+.toggle-switch-container {
+    position: absolute; /* Já é absoluto */
+    z-index: 700; /* Mantenha um z-index alto para ficar acima da imagem de fundo */
+    top: 230px;
+    left: 620px;
+    /* ... */
+}
+
+
+.toggle-buttons {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 5px;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+.toggle-button:hover {
+    color: #0070d1;
+}
+
+.toggle-button.active {
+    background-color: #0070d1;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.cards-wrapper {
+     display: flex; /* O cards-wrapper agora é um flex container */
+    flex-wrap: nowrap; /* Garante que os itens internos (category-cards) não quebrem linha */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    justify-content: flex-start; /* Alinha os itens ao início */
+
+    width: 100%;
+    overflow-x: scroll; /* Mantém a rolagem horizontal */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    transition: none; /* Remova se não estiver usando transform */
+
+    padding-top: 350px; /* Ajuste para espaçar do toggle */
+    margin: 0;
+    position: relative; /* Importante para o z-index */
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    /* Adicione uma altura mínima para o cards-wrapper para ele não colapsar */
+    min-height: 450px; /* Ajuste este valor conforme necessário para acomodar a altura dos seus cards */
+}
+
+/* Esconde a barra de rolagem no WebKit (Chrome, Safari) */
+.cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Category Cards: Para manter os cards em linha e permitir rolagem */
+.category-cards {
+    display: none; /* Por padrão, as categorias não são exibidas */
+    flex-wrap: nowrap; /* Garante que os cards dentro de CADA categoria fiquem em uma linha */
+    gap: 20px; /* O espaçamento entre os cards */
+    box-sizing: border-box;
+
+    /* A largura da categoria DEVE ser o suficiente para o seu conteúdo E o scroll */
+    /* Para garantir que uma única categoria active preencha o cards-wrapper e permita rolagem */
+    min-width: 100%; /* Garante que ela ocupe pelo menos 100% da largura do cards-wrapper */
+
+    flex-shrink: 0; /* Impede que a categoria encolha */
+    justify-content: flex-start;
+    scroll-snap-align: start; /* Mantém o snap se você quiser */
+
+    /* Remova opacity, visibility e transition se for usar display */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: opacity 0.5s ease-in-out; */
+}
+
+
+.category-cards.active {
+     display: flex; /* Quando ativa, exibe como flex container */
+    /* opacity: 1; */
+    /* visibility: visible; */
+    /* Não precisa de position: relative aqui se o wrapper já é flex e gerencia o fluxo */
+}
+
+/* Os cards individuais */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-width: 280px;
+    max-width: 320px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start;
+}
+
+.cards-gallery-arrow {
+     position: absolute;
+    top: 55%; /* Ajuste que você fez, mantendo */
+    transform: translateY(-50%);
+    background-color: #0070d1;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex; /* Começam como flex para serem visíveis se houver rolagem */
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Adicionar transição para opacidade */
+}
+
+
+.cards-gallery-arrow:hover {
+    background-color: #0056b3;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+.cards-gallery-arrow.left-arrow {
+    left: 0px;
+}
+
+.cards-gallery-arrow.right-arrow {
+    right: 17px;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 0 2px #0070d1;
+}
+
+.card-image-wrapper {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-image-wrapper.yellow-bg {
+    background-color: #FFD700;
+}
+
+.card-image-wrapper.grey-bg {
+    background-color: #D3D3D3;
+}
+
+.card-image-wrapper.black-bg {
+    background-color: #000000;
+}
+
+.card-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.black-bg .card-icon,
+.grey-bg .card-icon {
+    filter: invert(0%);
+}
+
+.black-bg .card-icon {
+    filter: none;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    background-color: #0070d1;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    width: clamp(100px, 10vw, 240px);
+    height: clamp(32px, 6vw, 40px);
+    box-sizing: border-box;
+}
+
+.card-button:hover {
+    background-color: #005bb5;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-arrow.left {
+    left: 20px;
+}
+
+.nav-arrow.right {
+    right: 20px;
+}
+
+.Subtitulo4 h1{
+    color: rgb(0, 0, 0);
+    font-size: 44px;
+    line-height: 1.1;
+    font-family: var(--dk-font-mont);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 80px;
+    width: fit-content; /* Ou uma largura específica, ex: 80% */
+    margin-left: auto;   /* Centraliza o bloco */
+    margin-right: auto;  /* Centraliza o bloco */
+    text-align: center; /* Para centralizar o texto dentro do bloco, se necessário */
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+.Subtitulo4 p{
+    color: rgb(75, 75, 75);
+    font-size: 14px;
+    line-height: 1.1;
+    font-family: var(--dk-font);
+    margin-bottom: 2rem;
+    width: fit-content; /* Ou uma largura específica, ex: 80% */
+    margin-left: auto;   /* Centraliza o bloco */
+    margin-right: auto;  /* Centraliza o bloco */
+    text-align: center; /* Para centralizar o texto dentro do bloco, se necessário */
+    margin-top: -15px;
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+/* --- Seção da Galeria de Imagens com Botões (mantido) --- */
+.image-gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #ffffff; /* Um fundo leve para a seção */
+    margin-top: 40px;
+    margin-bottom: 200px;
+  
+}
+
+.gallery-buttons {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-bottom: 40px; /* Espaçamento entre os botões e as imagens */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+    justify-content: center;
+    max-width: 1300px; /* Exemplo: Aumentei de 800px para 1000px. Ajuste conforme sua necessidade. */
+    max-height: 50px;
+    width: 100%; /* Permite que ele diminua em telas menores */
+}
+
+/* Estilos base para todos os botões da galeria */
+.gallery-btn {
+   padding: 20px 30px 20px;;/* Aumenta o padding para um visual mais robusto */
+    height: 90px;      
+    border: none;
+    border-radius: 12px; /* Aumenta o arredondamento dos cantos */
+    font-size: 1.5rem; /* Tamanho da fonte maior, como na imagem */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-grow: 1; /* Permite que os botões ocupem o espaço disponível */
+    max-width: calc((100% - 40px) / 3); /* Largura máxima para cada botão */
+    text-align: left; /* Texto alinhado à esquerda dentro do botão */
+    line-height: 1.2; /* Espaçamento de linha para o texto */
+    position: relative; /* Necessário para posicionar o subtítulo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    overflow: hidden; /* Garante que o conteúdo extra não vaze */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra padrão */
+     height: 70px; 
+}
+
+/* Subtítulo para os botões (como "Experimente todos os benefícios") */
+.gallery-btn::after {
+    content: attr(data-subtitle); /* Conteúdo do subtítulo do atributo data-subtitle */
+    font-size: 0.9rem;
+    font-weight: normal;
+    position: absolute;
+    bottom: 15px; /* Posição do subtítulo na parte inferior */
+    left: 30px; /* Alinhado com o texto principal */
+    right: 30px;
+    text-align: left;
+    white-space: normal; /* Permite que o texto quebre a linha */
+     bottom: 5px;
+    line-height: 1.3;
+}
+
+/* Estilo do Botão DELUXE (Fundo Preto com Texto Amarelo) */
+.gallery-btn.deluxe {
+    background-color: #222222; /* Preto mais suave */
+    color: #FFD700; /* Amarelo */
+}
+.gallery-btn.deluxe::after {
+    color: #cccccc; /* Cor do subtítulo para Deluxe */
+    content: "Experimente todos os benefícios"; /* Conteúdo do subtítulo */
+}
+.gallery-btn.deluxe:hover,
+.gallery-btn.deluxe.active-btn {
+    background-color: #000000; /* Preto mais forte no hover/ativo */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo do Botão EXTRA (Fundo Amarelo com Texto Preto) */
+.gallery-btn.extra {
+    background-color: #FFD700; /* Amarelo */
+    color: #000000; /* Preto */
+}
+.gallery-btn.extra::after {
+    color: #000000; /* Cor do subtítulo para Extra */
+    content: "Baixe centenas de jogos excelentes"; /* Conteúdo do subtítulo */
+}
+.gallery-btn.extra:hover,
+.gallery-btn.extra.active-btn {
+    background-color: #FFEB3B; /* Amarelo mais claro no hover/ativo */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do Botão ESSENCIAL (Fundo Branco com Texto Preto) */
+.gallery-btn.essencial {
+    background-color: #FFFFFF; /* Branco */
+    color: #222222; /* Preto */
+    border: 1px solid #E0E0E0; /* Borda sutil */
+}
+.gallery-btn.essencial::after {
+    color: #000000; /* Cor do subtítulo para Essencial */
+    content: "Jogos mensais, modo multijogador online e muito mais"; /* Conteúdo do subtítulo */
+}
+.gallery-btn.essencial:hover,
+.gallery-btn.essencial.active-btn {
+    background-color: #F8F8F8; /* Branco mais suave no hover/ativo */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Estilos para as Imagens (mantidos e ligeiramente ajustados) --- */
+.gallery-images {
+    width: 100%;
+    max-width:1800px;
+    position: relative;
+    min-height: 400px; /* Garante que o contêiner não colapse */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.gallery-image {
+     width: 100%; /* Garante que a imagem ocupe 100% da largura disponível no seu contêiner */
+    height: auto; /* Mantém a proporção da imagem automaticamente */
+    
+    /* ******** VOCÊ VAI ALTERAR AQUI ******** */
+    max-width: 1500px; /* Largura máxima que a imagem pode atingir. Ajuste este valor. */
+    max-height: 800px; /* Altura máxima que a imagem pode atingir. Ajuste este valor. */
+    /* ************************************** */
+
+    object-fit: contain; /* Garante que a imagem se ajuste dentro do espaço definido por max-width/max-height sem ser cortada, mantendo sua proporção */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-image.active {
+    display: block;
+    opacity: 1;
+    position: relative; /* Crucial para a imagem ativa ocupar espaço */
+    transform: none; /* Reseta o transform para a imagem ativa, pois relative não é afetado */
+    left: auto; /* Reseta o left para a imagem ativa */
+}
+
+.btn-7 {
+    background-color: #0056b3;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+     display: flex;             /* Transforma o botão em um container flexível */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
+    /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
+    position: absolute !important; /* Força o posicionamento absoluto */
+    top: 6820px !important;        /* Força a centralização vertical */
+    left: 50% !important;       /* Força a centralização horizontal */
+    transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
+     width: 600px;
+    /* z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
+    
+    height: 40px !important;    /* Garante a altura */
+    font-size: 16px !important; /* Garante o tamanho da fonte */
+
+    /* Remova quaisquer outras regras de 'position', 'top', 'left', 'right', 'bottom', 'margin' que possam estar em outras media queries ou blocos para .btn-6. */
+}
+
+.btn-7:hover {
+    background-color: #007bff;
+}
+
+.btn-8 {
+    background-color: #e7e7e7;
+    color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+     display: flex;             /* Transforma o botão em um container flexível */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
+    /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
+    position: absolute !important; /* Força o posicionamento absoluto */
+    top: 6880px !important;        /* Força a centralização vertical */
+    left: 50% !important;       /* Força a centralização horizontal */
+    transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
+     width: 450px;
+    /*z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
+    
+    height: 40px !important;    /* Garante a altura */
+    font-size: 16px !important; /* Garante o tamanho da fonte */
+
+    /* Remova quaisquer outras regras de 'position', 'top', 'left', 'right', 'bottom', 'margin' que possam estar em outras media queries ou blocos para .btn-6. */
+}
+
+.btn-8:hover {
+    background-color: #c9c9c9;
+}
+
+
+
+
+/* Container principal da seção de FAQ */
+
+.Subtitulo5 h1{
+    color: rgb(0, 0, 0);
+    font-size: 44px;
+    line-height: 1.1;
+    font-family: var(--dk-font-mont);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 80px;
+    width: fit-content; /* Ou uma largura específica, ex: 80% */
+    margin-left: auto;   /* Centraliza o bloco */
+    margin-right: auto;  /* Centraliza o bloco */
+    text-align: center; /* Para centralizar o texto dentro do bloco, se necessário */
+    margin: -2px auto;
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+.Subtitulo5 p{
+    color: rgb(75, 75, 75);
+    font-size: 14px;
+    line-height: 1.1;
+    font-family: var(--dk-font);
+    margin-bottom: 2rem;
+    width: fit-content; /* Ou uma largura específica, ex: 80% */
+    margin-left: auto;   /* Centraliza o bloco */
+    margin-right: auto;  /* Centraliza o bloco */
+    text-align: center; /* Para centralizar o texto dentro do bloco, se necessário */
+    margin-top: 78px;
+     margin: 17px auto;
+    /* align-items: center; */
+    /* position: relative; */
+}
+
+.faq-area-background {
+    background-color: #D8D8D8; /* Exemplo: Azul claro para o fundo da seção onde o box está */
+    padding: 100px 0; /* Adiciona um pouco de padding vertical para que o fundo apareça acima e abaixo do box */
+    /* Você pode ajustar o padding para controlar o quanto da cor aparece */
+    width: 100%; /* Ocupa toda a largura disponível */
+    /* Se você quiser que essa área tenha uma largura máxima também, pode adicionar max-width e margin: auto */
+    /* max-width: 1600px; */
+    /* margin: 0 auto; */
+    margin-bottom: 0px;
+}
+.faq-section {
+    max-width: 1400px;
+    margin: 90px auto;
+    padding: 40px;
+    background-color: #F2F2F2; /* NOVO TOM DE CINZA CLARO DA IMAGEM */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
+
+}
+
+/* Título da seção */
+.faq-section h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Cada item individual de FAQ (pergunta e resposta) */
+.faq-item {
+    margin-bottom: 10px;
+}
+
+/* O botão da pergunta - Estilo base */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+/* PERGUNTA: Fundo branco para perguntas ímpares (1ª, 3ª, 5ª, etc.) */
+.faq-item:nth-child(odd) .faq-question {
+    background-color: #ffffff; /* Mantém o branco */
+}
+
+/* PERGUNTA: Fundo cinza para perguntas pares (2ª, 4ª, 6ª, etc.) */
+.faq-item:nth-child(even) .faq-question {
+    background-color: #F2F2F2; /* NOVO TOM DE CINZA CLARO DA IMAGEM */
+}
+
+.faq-question:hover {
+    /* Ajustado o hover para um tom ligeiramente mais escuro que #F2F2F2, mas ainda leve */
+    background-color: #e0e0e0;
+}
+
+/* Ícone de alternância (+) */
+.faq-toggle-icon {
+    font-size: 28px;
+    line-height: 1;
+    color: #888;
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+/* Quando a pergunta está ativa (expandida) */
+.faq-question.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Efeito no ícone quando a pergunta está ativa */
+.faq-question.active .faq-toggle-icon {
+    transform: rotate(45deg);
+    color: #666;
+}
+
+/* A área da resposta */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: #F2F2F2; /* NOVO TOM DE CINZA CLARO DA IMAGEM */
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-answer p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #000000;
+    font-size: 15px;
+}
+
+/* Quando a resposta está ativa (aberta) */
+.faq-answer.active {
+    max-height: 500px;
+    padding: 15px 20px;
+}
+
+.banner8 img, 
+.banner7 img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    margin-top: 0.1px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================================== */
 /* MEDIA QUERIES PARA RESPONSIVIDADE */
 /* ================================== */
 
-/* Para telas pequenas (smartphones em modo retrato, até 768px) */
+/* --- Responsividade (ajustada para os novos botões) --- */
 @media (max-width: 768px) {
-    body { padding-top: 250px; }
+    .gallery-buttons {
+        flex-direction: column; /* Empilha os botões em telas menores */
+        gap: 15px;
+        padding: 0 10px; /* Pequeno padding para as bordas */
+    }
 
-    /* Header, Navbar, Submenu, Banner Section, Section Benefits - mantidos como antes */
-    .hamburger-menu { display: flex; }
-    header { height: 45px; padding: 0 0.8rem; justify-content: space-between; }
-    header img { height: 35px; }
-    .navbar { top: 45px; height: auto; flex-direction: row; padding: 0.5rem 1rem; flex-wrap: wrap; justify-content: space-between; }
-    .navbar-logo { height: 35px; }
-    .nav-menu { display: none; flex-direction: column; gap: 0.8rem; width: 100%; align-items: flex-start; margin-top: 0.5rem; background-color: #ffffff; padding: 1rem 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-    .nav-menu.active { display: flex; }
-    .nav-menu li { font-size: 1rem; padding: 0.3rem 1rem; width: 100%; }
-    .navbar-right { width: 100%; flex-direction: column; gap: 0.5rem; align-items: stretch; margin-top: 0.5rem; }
-    .btn-login, .search-input { width: 100%; max-width: none; text-align: center; }
-    .submenu-bar { top: 105px; flex-direction: column; gap: 1rem; padding: 1rem 0.5rem; }
-    .submenu-bar.active { max-height: 500px; }
-    .submenu-item { height: 70px; }
-    .second-navbar { top: 105px; height: auto; flex-direction: column; padding: 0.5rem 1rem; align-items: flex-start; box-shadow: none; }
-    .second-navbar-logo { height: 25px; margin-bottom: 0.5rem; }
-    .second-navbar-menu { flex-direction: column; gap: 0.8rem; width: 100%; align-items: flex-start; margin-bottom: 0.5rem; color: var(--color-text-dark); }
-    .second-navbar-menu li { font-size: 0.85rem; }
-    .btn-plus { width: 100%; padding: 0.8rem 1rem; text-align: center; }
-    .banner-section { margin-top: 0; }
-    .banner-content { top: 45%; left: 50%; transform: translate(-50%, -50%); padding: 0.5rem 1rem; max-width: 90%; text-align: center; align-items: center; }
-    .banner-content h2 { font-size: clamp(24px, 6vw, 36px); line-height: 1.1; }
-    .banner-content p { font-size: clamp(13px, 3vw, 16px); line-height: 1.4; margin-bottom: 1rem; }
-    .btn-action { padding: 0.7rem 1.2rem; font-size: clamp(13px, 2.5vw, 15px); width: auto; display: inline-block; }
-    .section-benefits { margin-top: 40px; }
-    .Subtitulo2, .Subtitulo3 { position: static; margin: 0 auto; width: 90%; max-width: 90%; transform: none; text-align: center; padding: 0.5rem 0; }
-    .Subtitulo3 { margin-top: 0.5rem; }
-    .galeria-fotos { margin-top: 20px; gap: 15px; padding: 10px 0; }
-    .galeria-fotos .foto-item { width: clamp(150px, 40vw, 250px); height: auto; }
-    .btn-3 { margin-top: 30px; font-size: clamp(0.9rem, 2.5vw, 1rem); min-width: 200px; padding: 0.7rem 1.5rem; }
+    .gallery-btn {
+        max-width: 100%; /* Botões ocupam a largura total disponível */
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        height: 100px; /* Altura um pouco menor */
+        padding: 12px 25px; /* Ajusta o padding */
+    }
+    .gallery-btn::after {
+        font-size: 0.75rem; /* Ajusta o tamanho da fonte do subtítulo */
+        bottom: 12px;
+        left: 25px;
+        right: 25px;
+    }
+    .gallery-images {
+        min-height: 300px; /* Altura mínima para imagens em telas menores */
+    }
+}
 
-    /* Nova Galeria em Mobile */
+@media (max-width: 480px) {
+    .gallery-btn {
+        height: 80px; /* Altura ainda menor para telas muito pequenas */
+        padding: 10px 20px;
+    }
+    .gallery-btn::after {
+        font-size: 0.7rem;
+        bottom: 10px;
+        left: 20px;
+        right: 20px;
+    }
+    .gallery-images {
+        min-height: 200px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 250px;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    header {
+        height: 45px;
+        padding: 0 0.8rem;
+        justify-content: space-between;
+    }
+
+    header img {
+        height: 35px;
+    }
+
+    .navbar {
+        top: 45px;
+        height: auto;
+        flex-direction: row;
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar-logo {
+        height: 35px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 0.5rem;
+        background-color: #ffffff;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        font-size: 1rem;
+        padding: 0.3rem 1rem;
+        width: 100%;
+    }
+
+    .navbar-right {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+        margin-top: 0.5rem;
+    }
+
+    .btn-login,
+    .search-input {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+
+    .submenu-bar {
+        top: 105px;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .submenu-bar.active {
+        max-height: 500px;
+    }
+
+    .submenu-item {
+        height: 70px;
+    }
+
+    .second-navbar {
+        top: 105px;
+        height: auto;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        align-items: flex-start;
+        box-shadow: none;
+    }
+
+    .second-navbar-logo {
+        height: 25px;
+        margin-bottom: 0.5rem;
+    }
+
+    .second-navbar-menu {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+        color: var(--color-text-dark);
+    }
+
+    .second-navbar-menu li {
+        font-size: 0.85rem;
+    }
+
+    .btn-plus {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+
+    .banner-section {
+        margin-top: 0;
+    }
+
+    .banner-content {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.5rem 1rem;
+        max-width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .banner-content h2 {
+        font-size: clamp(24px, 6vw, 36px);
+        line-height: 1.1;
+    }
+
+    .banner-content p {
+        font-size: clamp(13px, 3vw, 16px);
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .btn-action {
+        padding: 0.7rem 1.2rem;
+        font-size: clamp(13px, 2.5vw, 15px);
+        width: auto;
+        display: inline-block;
+    }
+
+    .section-benefits {
+        margin-top: 40px;
+    }
+
+    .Subtitulo2,
+    .Subtitulo3 {
+        position: static;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 90%;
+        transform: none;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .Subtitulo3 {
+        margin-top: 0.5rem;
+    }
+
+    .galeria-fotos {
+        margin-top: 20px;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .galeria-fotos .foto-item {
+        width: clamp(150px, 40vw, 250px);
+        height: auto;
+    }
+
+    .btn-3 {
+        margin-top: 30px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        min-width: 200px;
+        padding: 0.7rem 1.5rem;
+    }
+
     .background-banner-wrapper {
         margin-top: 60px;
         margin-bottom: 20px;
         min-height: 350px;
     }
+
     .horizontal-gallery-overlay {
         position: static;
         transform: none;
@@ -734,37 +1806,42 @@ header img {
         flex-direction: column;
         align-items: center;
     }
+
     .horizontal-scroll-gallery {
         padding: 10px 0;
-        gap: 8px; /* Espaçamento ainda menor em mobile */
-        /* Importante: Em mobile, a rolagem por arrasto é nativa do touch. */
-        /* O JS de drag-mouse pode não ser ideal para touchscreens. */
+        gap: 8px;
     }
+
     .gallery-card {
         width: clamp(180px, 45vw, 250px);
         min-height: 300px;
     }
+
     .gallery-card img {
         height: clamp(100px, 30vw, 150px);
     }
+
     .card-content {
         padding: 0.7rem;
     }
+
     .card-category {
         font-size: 0.6rem;
     }
+
     .card-title {
         font-size: clamp(0.75rem, 3vw, 0.9rem);
     }
+
     .card-description {
         font-size: clamp(0.55rem, 2vw, 0.7rem);
-        -webkit-line-clamp: 4;
-    }
-    .gallery-arrow {
-        display: none; /* Esconde as setas em mobile */
+    
     }
 
-    /* Toggle Switch em Mobile */
+    .gallery-arrow {
+        display: none;
+    }
+
     .toggle-switch-wrapper {
         position: static;
         margin-top: 30px;
@@ -777,174 +1854,371 @@ header img {
         justify-content: center;
         z-index: auto;
     }
+
     .toggle-label-visual {
         width: clamp(240px, 90vw, 300px);
         height: clamp(40px, 12vw, 50px);
     }
+
     .toggle-text {
         font-size: clamp(0.7rem, 3.5vw, 0.9rem);
     }
+
     .toggle-label-visual::before {
         border-radius: calc(clamp(40px, 12vw, 50px) / 2 - 4px);
     }
+
+    .benefits-section {
+        margin-top: 40px;
+    }
+
+    .toggle-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .toggle-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .card {
+        min-width: 250px;
+    }
+
+    .category-cards {
+        padding: 0 10px;
+    }
+
+    .cards-wrapper {
+        padding-top: 120px;
+    }
+
+    .cards-gallery-container {
+        min-height: 500px;
+        padding-bottom: 20.83%;
+    }
 }
 
-/* Para telas médias (tablets, laptops pequenos, de 769px a 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    body { padding-top: 170px; }
-    .navbar { padding: 0 1.5rem; }
-    .nav-menu { gap: 1.5rem; flex-wrap: wrap; }
-    .nav-menu li { font-size: 0.8rem; }
-    .search-input { max-width: 120px; }
-    .second-navbar { padding: 0 1.5rem; }
-    .second-navbar-menu { gap: 1.5rem; flex-wrap: wrap; }
-    .second-navbar-menu li { font-size: 0.85rem; }
-    .banner-content { top: 50%; left: 5%; padding: 0.8rem 1.5rem; max-width: 70%; transform: translateY(-50%); text-align: left; align-items: flex-start; }
-    .banner-content h2 { font-size: clamp(32px, 4.5vw, 40px); }
-    .banner-content p { font-size: clamp(15px, 2vw, 18px); }
-    .btn-action { padding: 0.7rem 1.8rem; }
-    .section-benefits { margin-top: 60px; }
-    .Subtitulo2, .Subtitulo3 { font-size: clamp(15px, 2.5vw, 18px); margin-top: 1rem; }
-    .Subtitulo3 { font-size: clamp(25px, 4vw, 40px); margin-top: 1rem; }
-    .galeria-fotos { margin-top: 40px; gap: 20px; }
-    .galeria-fotos .foto-item { width: clamp(200px, 28vw, 300px); }
-    .btn-3 { margin-top: 40px; }
 
-    /* Nova Galeria em Telas Médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        padding-top: 170px;
+    }
+
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+        font-size: 0.8rem;
+    }
+
+    .search-input {
+        max-width: 120px;
+    }
+
+    .second-navbar {
+        padding: 0 1.5rem;
+    }
+
+    .second-navbar-menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .second-navbar-menu li {
+        font-size: 0.85rem;
+    }
+
+    .banner-content {
+        top: 50%;
+        left: 5%;
+        padding: 0.8rem 1.5rem;
+        max-width: 70%;
+        transform: translateY(-50%);
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .banner-content h2 {
+        font-size: clamp(32px, 4.5vw, 40px);
+    }
+
+    .banner-content p {
+        font-size: clamp(15px, 2vw, 18px);
+    }
+
+    .btn-action {
+        padding: 0.7rem 1.8rem;
+    }
+
+    .section-benefits {
+        margin-top: 60px;
+    }
+
+    .Subtitulo2,
+    .Subtitulo3 {
+        font-size: clamp(15px, 2.5vw, 18px);
+        margin-top: 1rem;
+    }
+
+    .Subtitulo3 {
+        font-size: clamp(25px, 4vw, 40px);
+        margin-top: 1rem;
+    }
+
+    .galeria-fotos {
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .galeria-fotos .foto-item {
+        width: clamp(200px, 28vw, 300px);
+    }
+
+    .btn-3 {
+        margin-top: 40px;
+    }
+
     .background-banner-wrapper {
         margin-top: 70px;
         margin-bottom: 30px;
         min-height: 400px;
     }
+
     .horizontal-gallery-overlay {
         padding: 0 1.5rem;
     }
+
     .horizontal-scroll-gallery {
         padding: 15px 0;
-        gap: 15px; /* Espaçamento ajustado para telas médias */
+        gap: 15px;
     }
+
     .gallery-card {
         width: clamp(220px, 22vw, 280px);
         min-height: 380px;
     }
+
     .gallery-card img {
         height: clamp(150px, 12vw, 180px);
     }
+
     .card-content {
         padding: 0.9rem;
     }
+
     .card-category {
         font-size: 0.7rem;
     }
+
     .card-title {
         font-size: clamp(0.9rem, 1.4vw, 1.1rem);
     }
+
     .card-description {
         font-size: clamp(0.7rem, 1.1vw, 0.85rem);
-        -webkit-line-clamp: 3;
+      
     }
+
     .gallery-arrow {
         width: 45px;
         height: 45px;
         font-size: 1.6rem;
     }
 
-    /* Toggle Switch em Telas Médias */
     .toggle-switch-wrapper {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         z-index: 20;
-        top: 190vh; /* Ajustar este valor */
+        top: 190vh;
     }
+
     .toggle-label-visual {
         width: clamp(300px, 70vw, 350px);
         height: clamp(50px, 8vw, 55px);
     }
 }
 
-/* Para telas muito grandes (desktops grandes, acima de 1921px) */
 @media (min-width: 1921px) {
-    body { padding-top: 170px; }
-    /* Header, Navbar, Submenu, Banner Section, Section Benefits - mantidos como antes */
-    .navbar, .second-navbar, header { padding: 0 3rem; }
-    header img { height: 50px; }
-    .navbar-logo { height: 50px; }
-    .nav-menu { gap: 4rem; }
-    .nav-menu li { font-size: 1rem; }
-    .search-input { max-width: 200px; }
-    .submenu-bar { gap: 3rem; }
-    .submenu-item { height: 120px; }
-    .second-navbar-logo { height: 40px; }
-    .second-navbar-menu { gap: 3rem; }
-    .second-navbar-menu li { font-size: 1rem; }
-    .btn-plus { padding: 0.8rem 2rem; font-size: 1rem; }
-    .banner-content { top: 55%; left: 8%; max-width: 60%; }
-    .banner-content h2 { font-size: 48px; }
-    .banner-content p { font-size: 20px; }
-    .btn-action { padding: 0.9rem 2.2rem; font-size: 18px; }
-    .section-benefits { margin-top: 100px; }
-    .Subtitulo2, .Subtitulo3 { font-size: clamp(18px, 1.5vw, 20px); margin-top: 1.5rem; }
-    .Subtitulo3 { font-size: clamp(30px, 3vw, 50px); margin-top: 1.5rem; }
-    .galeria-fotos { margin-top: 60px; gap: 35px; max-width: 1400px; }
-    .galeria-fotos .foto-item { width: clamp(300px, 20vw, 400px); }
-    .btn-3 { margin-top: 60px; min-width: 300px; font-size: clamp(1.1rem, 1.5vw, 1.2rem); }
+    body {
+        padding-top: 170px;
+    }
 
-    /* Nova Galeria em Telas Muito Grandes */
+    .navbar,
+    .second-navbar,
+    header {
+        padding: 0 3rem;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    .navbar-logo {
+        height: 50px;
+    }
+
+    .nav-menu {
+        gap: 4rem;
+    }
+
+    .nav-menu li {
+        font-size: 1rem;
+    }
+
+    .search-input {
+        max-width: 200px;
+    }
+
+    .submenu-bar {
+        gap: 3rem;
+    }
+
+    .submenu-item {
+        height: 120px;
+    }
+
+    .second-navbar-logo {
+        height: 40px;
+    }
+
+    .second-navbar-menu {
+        gap: 3rem;
+    }
+
+    .second-navbar-menu li {
+        font-size: 1rem;
+    }
+
+    .btn-plus {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .banner-content {
+        top: 55%;
+        left: 8%;
+        max-width: 60%;
+    }
+
+    .banner-content h2 {
+        font-size: 48px;
+    }
+
+    .banner-content p {
+        font-size: 20px;
+    }
+
+    .btn-action {
+        padding: 0.9rem 2.2rem;
+        font-size: 18px;
+    }
+
+    .section-benefits {
+        margin-top: 100px;
+    }
+
+    .Subtitulo2,
+    .Subtitulo3 {
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-top: 1.5rem;
+    }
+
+    .Subtitulo3 {
+        font-size: clamp(30px, 3vw, 50px);
+        margin-top: 1.5rem;
+    }
+
+    .galeria-fotos {
+        margin-top: 60px;
+        gap: 35px;
+        max-width: 1400px;
+    }
+
+    .galeria-fotos .foto-item {
+        width: clamp(300px, 20vw, 400px);
+    }
+
+    .btn-3 {
+        margin-top: 60px;
+        min-width: 300px;
+        font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+    }
+
     .background-banner-wrapper {
         margin-top: 100px;
         margin-bottom: 50px;
         min-height: 600px;
     }
+
     .horizontal-gallery-overlay {
         padding: 0 3rem;
     }
+
     .horizontal-scroll-gallery {
         padding: 30px 0;
-        gap: 25px; /* Espaçamento ajustado para telas muito grandes */
+        gap: 25px;
     }
+
     .gallery-card {
         width: clamp(280px, 20vw, 350px);
         min-height: 450px;
     }
+
     .gallery-card img {
         height: clamp(180px, 15vw, 220px);
     }
+
     .card-content {
         padding: 1.5rem;
     }
+
     .card-category {
         font-size: 0.85rem;
     }
+
     .card-title {
         font-size: clamp(1.1rem, 1.5vw, 1.3rem);
     }
+
     .card-description {
         font-size: clamp(0.8rem, 1vw, 0.95rem);
-        -webkit-line-clamp: 4;
+        
     }
+
     .gallery-arrow {
         width: 60px;
         height: 60px;
         font-size: 2.2rem;
     }
 
-    /* Toggle Switch em Telas Muito Grandes */
     .toggle-switch-wrapper {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         z-index: 20;
-        top: 200vh; /* Ajustar este valor */
+        top: 200vh;
     }
+
     .toggle-label-visual {
         width: 450px;
         height: 60px;
         border-radius: 30px;
     }
+
     .toggle-text {
         font-size: 1.1rem;
     }
+
     .toggle-label-visual::before {
         border-radius: 26px;
     }

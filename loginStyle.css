@@ -1,0 +1,92 @@
+
+
+.Titulo01 h2 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 240px;
+    left: 1200px;
+}
+
+.Titulo01 p {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 330px;
+    left: 1170px;
+}
+
+
+.search-input {
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0.4rem 0.8rem;
+    /* REMOVA max-width: 150px; e width: 100%; (se ainda estiverem) */
+    /* max-width: 150px; */ 
+    /* width: 100%; */ 
+    outline: none;
+    font-size: 0.9rem;
+    position: absolute; /* Mantenha position: absolute para usar top/left */
+    
+    top: 375px; /* Mantenha seu top, ajuste conforme a posição vertical desejada */
+    left: 1146px; /* Mantenha seu left, ajuste conforme a posição horizontal desejada */
+    
+    height: 42px; /* A altura está fixa, ótimo */
+
+    /* --- AQUI ESTÁ O AJUSTE PARA CONTROLAR O QUANTO ELE ESTICA LATERALMENTE --- */
+    width: 520px; /* <--- Defina uma largura fixa em pixels aqui! */
+                  /* Você pode ajustar '250px' para qualquer valor (ex: 300px, 180px) */
+                  /* Isso fará com que o input tenha exatamente essa largura. */
+
+    /* OU, se você quiser uma porcentagem do pai, mas controlada: */
+    /* width: 20%; */ /* Exemplo: 20% da largura do pai posicionado (.navbar, neste caso) */
+                     /* Se o pai é a navbar (fixa no topo), isso pode ser útil. */
+
+    /* Se você usar 'width', REMOVA as propriedades 'right' e 'left' que forçariam o esticamento. */
+}
+
+.search-input:hover {
+    background-color: #ffffff2d;
+}
+
+
+
+
+
+.btn-Seguinte {
+    background-color: #858585;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+     display: flex;             /* Transforma o botão em um container flexível */
+    justify-content: center;   /* Centraliza o conteúdo horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
+    /* --- NOVAS PROPRIEDADES DE POSICIONAMENTO E FORÇA --- */
+    position: absolute !important; /* Força o posicionamento absoluto */
+    top: 470px !important;        /* Força a centralização vertical */
+    left: 78.3% !important;       /* Força a centralização horizontal */
+    transform: translate(-50%, -50%) !important; /* Força o ajuste fino para centralizar o próprio botão */
+     width: 540px;
+    /* z-index: 10000 !important;  Garante que ele esteja acima de TUDO */
+    
+    height: 40px !important;    /* Garante a altura */
+    font-size: 16px !important; /* Garante o tamanho da fonte */
+
+    /* Remova quaisquer outras regras de 'position', 'top', 'left', 'right', 'bottom', 'margin' que possam estar em outras media queries ou blocos para .btn-6. */
+}
+
+.btn-Seguinte:hover {
+    background-color: #b9b9b9;
+}
