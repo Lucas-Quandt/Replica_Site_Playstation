@@ -1,4 +1,4 @@
-# PlayStation Plus Clone
+# Replica Site PlayStation Plus (Estritamente educacional)
 
 ## 📖 Descrição
 
@@ -36,4 +36,4 @@ Como um programador iniciante, escolhi este site por sua interface moderna, rica
 Abaixo estão capturas de tela do projeto, mostrando o layout e as funcionalidades implementadas:
 
 - **Homepage**: Página inicial com banner dinâmico e navegação.
-- 
+![Homepage](img/FotoPC1)
