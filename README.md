@@ -63,10 +63,26 @@ Abaixo estão capturas de tela do projeto, mostrando o layout e as funcionalidad
 ## 📸 Demonstração
 
 Abaixo estão capturas de tela do projeto, mostrando o layout e as funcionalidades implementadas de responsividade:
-##
-<div style="text-align: center;">
-  <img src="img/Fo" alt="Homepage" width="500">
-</div>
+*
+<img src="img/FotoSmartphone1.png" alt="Homepage" width="450">
+*
+<img src="img/FotoSmartphone2.png" alt="Homepage" width="450">
+
+<img src="img/FotoSmartphone3.png" alt="Homepage" width="450">
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5**: Estruturação semântica do conteúdo.
+- **CSS3**: Estilização com Flexbox, Grid, animações e media queries para responsividade.
+- **JavaScript**: Funcionalidades interativas, como menus dinâmicos, carrosséis e validação de formulários.
+- **Ferramentas auxiliares**: 
+  - VS Code (editor de código)
+  - Figma (para referência de design, se aplicável)
+  - Git/GitHub (controle de versão)
+
+---
+
 
 
 
