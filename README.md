@@ -65,7 +65,7 @@ Abaixo estão capturas de tela do projeto, mostrando o layout e as funcionalidad
 Abaixo estão capturas de tela do projeto, mostrando o layout e as funcionalidades implementadas de responsividade:
 ##
 <div style="text-align: center;">
-  <img src="img/FotoSmartphone1.png" alt="Homepage" width="500">
+  <img src="img/Fo" alt="Homepage" width="500">
 </div>
 
 
